@@ -57,13 +57,23 @@ const generateIconComponent = async (filePath, iconName) => {
     { componentName: iconName }
   );
 
-  // Clean and enhance the JSX code
-  const cleanedJsxCode = jsxCode
-    .replace(/import \* as React from "react"/, 'import React from "react"')
+  // Extract just the SVG element from the generated code
+  const svgMatch = jsxCode.match(/<svg[\s\S]*<\/svg>/);
+  if (!svgMatch) {
+    throw new Error(`Failed to extract SVG from ${filePath}`);
+  }
+
+  let svgElement = svgMatch[0];
+
+  // Clean and enhance the SVG element
+  svgElement = svgElement
     .replace(/width={.*?}/g, "width={size}")
     .replace(/height={.*?}/g, "height={size}")
     .replace(/fill="currentColor"/g, 'fill={color || "currentColor"}')
-    .replace(/stroke="currentColor"/g, 'stroke={color || "currentColor"}');
+    .replace(/stroke="currentColor"/g, 'stroke={color || "currentColor"}')
+    .replace(/<svg([^>]*)>/, '<svg$1 className={className} {...props}>')
+    .replace(/\s+/g, ' ') // Normalize whitespace to single spaces
+    .trim();
 
   // Create the component with TypeScript interface
   const componentCode = `import React from 'react';
@@ -94,17 +104,7 @@ const ${iconName}: React.FC<${iconName}Props> = ({
   className = "",
   ...props
 }) => (
-  ${cleanedJsxCode
-    .split("\n")
-    .slice(1) // Remove the first line (imports and arrow function start)
-    .join("\n")
-    .replace(
-      /<svg/,
-      `<svg
-    className={\`\${className}\`}
-    width={size}
-    height={size}`
-    )}
+  ${svgElement}
 );
 
 export default ${iconName};
