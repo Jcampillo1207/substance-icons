@@ -1,0 +1,17 @@
+# Source files
+src/
+svg/
+scripts/
+
+# Configuration files
+tsconfig.json
+rollup.config.mjs
+.gitignore
+
+# Development files
+node_modules/
+.git/
+*.log
+
+# Documentation that's not needed in the package
+svg/README.md

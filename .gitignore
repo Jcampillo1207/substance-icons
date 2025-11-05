@@ -7,7 +7,10 @@ yarn-error.log
 # Production
 build/
 dist/
-svg/
+
+# SVG source files (but keep the README)
+svg/*
+!svg/README.md
 
 # Misc
 .DS_Store
