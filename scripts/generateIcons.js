@@ -85,16 +85,25 @@ const generateIconComponent = async (filePath, iconName) => {
     .replace(/\s+height={[^}]*}/g, "");
 
   // Replace color attributes with dynamic props
+  // Using negative lookahead (?!-) to avoid matching stroke-dasharray, stroke-width, etc.
   svgContent = svgContent
+    // Handle fill attributes
     .replace(/fill="currentColor"/g, 'fill={color || "currentColor"}')
     .replace(/fill='currentColor'/g, 'fill={color || "currentColor"}')
-    .replace(/stroke="currentColor"/g, 'stroke={color || "currentColor"}')
-    .replace(/stroke='currentColor'/g, 'stroke={color || "currentColor"}')
-    // Also handle hardcoded colors like #000
-    .replace(/stroke="#[0-9a-fA-F]{3,6}"/g, 'stroke={color || "currentColor"}')
-    .replace(/stroke='#[0-9a-fA-F]{3,6}'/g, 'stroke={color || "currentColor"}')
     .replace(/fill="#[0-9a-fA-F]{3,6}"/g, 'fill={color || "currentColor"}')
-    .replace(/fill='#[0-9a-fA-F]{3,6}'/g, 'fill={color || "currentColor"}');
+    .replace(/fill='#[0-9a-fA-F]{3,6}'/g, 'fill={color || "currentColor"}')
+    // Handle stroke attributes (but not stroke-dasharray, stroke-width, etc)
+    // The (?!-) ensures we don't match if there's a hyphen after 'stroke'
+    .replace(/(\s)stroke="currentColor"/g, '$1stroke={color || "currentColor"}')
+    .replace(/(\s)stroke='currentColor'/g, '$1stroke={color || "currentColor"}')
+    .replace(
+      /(\s)stroke="#[0-9a-fA-F]{3,6}"/g,
+      '$1stroke={color || "currentColor"}'
+    )
+    .replace(
+      /(\s)stroke='#[0-9a-fA-F]{3,6}'/g,
+      '$1stroke={color || "currentColor"}'
+    );
 
   // Add our custom attributes to the opening svg tag
   svgContent = svgContent.replace(
