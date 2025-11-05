@@ -1,5 +1,11 @@
 import React from 'react';
 
+interface XProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name X
@@ -13,12 +19,6 @@ import React from 'react';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
-
-interface XProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const X: React.FC<XProps> = ({
   size = 24,

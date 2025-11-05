@@ -1,5 +1,11 @@
 import React from 'react';
 
+interface ChevronLeftProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name ChevronLeft
@@ -13,12 +19,6 @@ import React from 'react';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
-
-interface ChevronLeftProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const ChevronLeft: React.FC<ChevronLeftProps> = ({
   size = 24,

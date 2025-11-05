@@ -1,5 +1,11 @@
 import React from 'react';
 
+interface Dashboard3Props extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name Dashboard3
@@ -13,12 +19,6 @@ import React from 'react';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
-
-interface Dashboard3Props extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const Dashboard3: React.FC<Dashboard3Props> = ({
   size = 24,

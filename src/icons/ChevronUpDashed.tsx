@@ -1,5 +1,11 @@
 import React from 'react';
 
+interface ChevronUpDashedProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name ChevronUpDashed
@@ -13,12 +19,6 @@ import React from 'react';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
-
-interface ChevronUpDashedProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const ChevronUpDashed: React.FC<ChevronUpDashedProps> = ({
   size = 24,

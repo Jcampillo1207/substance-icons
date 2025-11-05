@@ -35,6 +35,13 @@ import X from './X';
 import XDashed from './XDashed';
 import { IconName } from './types';
 
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+  name: IconName;
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name Substance
@@ -49,13 +56,6 @@ import { IconName } from './types';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element | null} JSX element representing the SVG icon.
  */
-
-interface IconProps extends React.SVGProps<SVGSVGElement> {
-  name: IconName;
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const Substance: React.FC<IconProps> = ({
   name,

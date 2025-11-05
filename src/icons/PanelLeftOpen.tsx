@@ -1,5 +1,11 @@
 import React from 'react';
 
+interface PanelLeftOpenProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name PanelLeftOpen
@@ -13,12 +19,6 @@ import React from 'react';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
-
-interface PanelLeftOpenProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const PanelLeftOpen: React.FC<PanelLeftOpenProps> = ({
   size = 24,

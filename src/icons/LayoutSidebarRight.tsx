@@ -1,5 +1,11 @@
 import React from 'react';
 
+interface LayoutSidebarRightProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name LayoutSidebarRight
@@ -13,12 +19,6 @@ import React from 'react';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
-
-interface LayoutSidebarRightProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const LayoutSidebarRight: React.FC<LayoutSidebarRightProps> = ({
   size = 24,

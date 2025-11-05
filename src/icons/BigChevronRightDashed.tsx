@@ -1,5 +1,11 @@
 import React from 'react';
 
+interface BigChevronRightDashedProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name BigChevronRightDashed
@@ -13,12 +19,6 @@ import React from 'react';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
-
-interface BigChevronRightDashedProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const BigChevronRightDashed: React.FC<BigChevronRightDashedProps> = ({
   size = 24,

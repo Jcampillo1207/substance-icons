@@ -105,6 +105,12 @@ const generateIconComponent = async (filePath, iconName) => {
   // Create the component with TypeScript interface
   const componentCode = `import React from 'react';
 
+interface ${iconName}Props extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name ${iconName}
@@ -118,12 +124,6 @@ const generateIconComponent = async (filePath, iconName) => {
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
-
-interface ${iconName}Props extends React.SVGProps<SVGSVGElement> {
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const ${iconName}: React.FC<${iconName}Props> = ({
   size = 24,
@@ -164,6 +164,13 @@ const generateUniversalIconComponent = async () => {
 ${iconImports}
 import { IconName } from './types';
 
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+  name: IconName;
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
 /**
  * @component
  * @name Substance
@@ -178,13 +185,6 @@ import { IconName } from './types';
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element | null} JSX element representing the SVG icon.
  */
-
-interface IconProps extends React.SVGProps<SVGSVGElement> {
-  name: IconName;
-  size?: number;
-  color?: string;
-  className?: string;
-}
 
 const Substance: React.FC<IconProps> = ({
   name,
