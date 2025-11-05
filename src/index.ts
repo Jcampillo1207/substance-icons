@@ -1,6 +1,10 @@
 export { default as BigChevronDown } from './icons/BigChevronDown';
+export { default as BigChevronDownDashed } from './icons/BigChevronDownDashed';
 export { default as BigChevronLeft } from './icons/BigChevronLeft';
+export { default as BigChevronLeftDashed } from './icons/BigChevronLeftDashed';
 export { default as BigChevronRight } from './icons/BigChevronRight';
+export { default as BigChevronRightDashed } from './icons/BigChevronRightDashed';
 export { default as BigChevronUp } from './icons/BigChevronUp';
+export { default as BigChevronUpDashed } from './icons/BigChevronUpDashed';
 export { default as Substance } from './icons/Substance';
 export { IconName } from './icons/types';

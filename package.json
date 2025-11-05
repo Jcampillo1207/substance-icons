@@ -10,8 +10,8 @@
     "build": "rollup -c rollup.config.mjs",
     "generate-icons": "node scripts/generateIcons.js",
     "dev": "npm run generate-icons && npm run build",
-    "ship": "npm run generate-icons && npm run build && npm version patch && npm publish --access public",
-    "deploy": "npm run generate-icons && npm run build && npm version patch && npm publish --access public && git push && git push --tags",
+    "ship": "node scripts/ship.js",
+    "deploy": "node scripts/deploy.js",
     "prepublishOnly": "npm run build"
   },
   "keywords": [

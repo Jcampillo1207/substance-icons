@@ -1,8 +1,12 @@
 import React from 'react';
 import BigChevronDown from './BigChevronDown';
+import BigChevronDownDashed from './BigChevronDownDashed';
 import BigChevronLeft from './BigChevronLeft';
+import BigChevronLeftDashed from './BigChevronLeftDashed';
 import BigChevronRight from './BigChevronRight';
+import BigChevronRightDashed from './BigChevronRightDashed';
 import BigChevronUp from './BigChevronUp';
+import BigChevronUpDashed from './BigChevronUpDashed';
 import { IconName } from './types';
 
 /**
@@ -34,7 +38,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronLeft, BigChevronRight, BigChevronUp };
+  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
