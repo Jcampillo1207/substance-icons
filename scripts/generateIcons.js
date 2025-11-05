@@ -46,7 +46,11 @@ const generateIconComponent = async (filePath, iconName) => {
               "@svgr/babel-plugin-replace-jsx-attribute-value",
               {
                 values: [
-                  { value: "currentColor", newValue: "{color || 'currentColor'}", literal: true },
+                  {
+                    value: "currentColor",
+                    newValue: "{color || 'currentColor'}",
+                    literal: true,
+                  },
                 ],
               },
             ],
@@ -57,13 +61,46 @@ const generateIconComponent = async (filePath, iconName) => {
     { componentName: iconName }
   );
 
-  // Clean and enhance the JSX code
-  const cleanedJsxCode = jsxCode
-    .replace(/import \* as React from "react"/, 'import React from "react"')
-    .replace(/width={.*?}/g, "width={size}")
-    .replace(/height={.*?}/g, "height={size}")
+  // Extract just the SVG content from the generated JSX
+  // The jsxCode will contain something like:
+  // import * as React from "react";
+  // const SvgComponent = (props) => (<svg>...</svg>);
+  // export default SvgComponent;
+
+  // Extract the SVG element from the JSX code
+  const svgMatch = jsxCode.match(/<svg[\s\S]*?<\/svg>/);
+  if (!svgMatch) {
+    throw new Error(
+      `Could not extract SVG from generated code for ${iconName}`
+    );
+  }
+
+  let svgContent = svgMatch[0];
+
+  // Remove existing width and height attributes (both string and JSX)
+  svgContent = svgContent
+    .replace(/\s+width="[^"]*"/g, "")
+    .replace(/\s+width={[^}]*}/g, "")
+    .replace(/\s+height="[^"]*"/g, "")
+    .replace(/\s+height={[^}]*}/g, "");
+
+  // Replace color attributes with dynamic props
+  svgContent = svgContent
     .replace(/fill="currentColor"/g, 'fill={color || "currentColor"}')
-    .replace(/stroke="currentColor"/g, 'stroke={color || "currentColor"}');
+    .replace(/fill='currentColor'/g, 'fill={color || "currentColor"}')
+    .replace(/stroke="currentColor"/g, 'stroke={color || "currentColor"}')
+    .replace(/stroke='currentColor'/g, 'stroke={color || "currentColor"}')
+    // Also handle hardcoded colors like #000
+    .replace(/stroke="#[0-9a-fA-F]{3,6}"/g, 'stroke={color || "currentColor"}')
+    .replace(/stroke='#[0-9a-fA-F]{3,6}'/g, 'stroke={color || "currentColor"}')
+    .replace(/fill="#[0-9a-fA-F]{3,6}"/g, 'fill={color || "currentColor"}')
+    .replace(/fill='#[0-9a-fA-F]{3,6}'/g, 'fill={color || "currentColor"}');
+
+  // Add our custom attributes to the opening svg tag
+  svgContent = svgContent.replace(
+    /<svg/,
+    `<svg\n    className={\`\${className}\`}\n    width={size}\n    height={size}`
+  );
 
   // Create the component with TypeScript interface
   const componentCode = `import React from 'react';
@@ -77,7 +114,7 @@ const generateIconComponent = async (filePath, iconName) => {
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
- * @website intello.dev
+ * @website https://intelloai.com/resources/substance/icons
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
@@ -94,17 +131,7 @@ const ${iconName}: React.FC<${iconName}Props> = ({
   className = "",
   ...props
 }) => (
-  ${cleanedJsxCode
-    .split("\n")
-    .slice(1) // Remove the first line (imports and arrow function start)
-    .join("\n")
-    .replace(
-      /<svg/,
-      `<svg
-    className={\`\${className}\`}
-    width={size}
-    height={size}`
-    )}
+  ${svgContent}
 );
 
 export default ${iconName};
@@ -147,7 +174,7 @@ import { IconName } from './types';
  * @param {string} [props.color] - Icon color.
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
- * @website intello.dev
+ * @website https://intelloai.com/resources/substance/icons
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element | null} JSX element representing the SVG icon.
  */
@@ -166,7 +193,9 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { ${iconNames.join(", ")} };
+  const icons: Record<string, React.ComponentType<any>> = { ${iconNames.join(
+    ", "
+  )} };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
@@ -202,7 +231,10 @@ const generateIndexFile = async () => {
     .map((file) => path.basename(file, ".tsx"));
 
   const exports = iconNames
-    .map((iconName) => `export { default as ${iconName} } from './icons/${iconName}';`)
+    .map(
+      (iconName) =>
+        `export { default as ${iconName} } from './icons/${iconName}';`
+    )
     .join("\n");
 
   const indexContent = `${exports}\nexport { IconName } from './icons/types';`;
@@ -258,7 +290,9 @@ const generateIcons = async () => {
 
   if (!hasSvgFiles) {
     console.warn("⚠️  Warning: No SVG files found in the svg directory.");
-    console.log("\nPlease add SVG files to the 'svg' directory and run this command again.");
+    console.log(
+      "\nPlease add SVG files to the 'svg' directory and run this command again."
+    );
     process.exit(0);
   }
 
@@ -282,7 +316,9 @@ const generateIcons = async () => {
   await generateIndexFile();
 
   console.log("\n✅ Icons generated successfully!");
-  console.log(`📊 Total icons: ${svgFiles.filter((f) => f.endsWith(".svg")).length}\n`);
+  console.log(
+    `📊 Total icons: ${svgFiles.filter((f) => f.endsWith(".svg")).length}\n`
+  );
 };
 
 // Run the generator

@@ -181,6 +181,6 @@ This project is licensed under the ISC License. See the [LICENSE](./LICENSE) fil
 ---
 
 **Author**: José Campillo
-**Website**: [intello.dev](https://intello.dev)
+**Website**: [intello.dev](https://intelloai.com/resources/substance/icons)
 **Twitter**: [@Chema12071](https://x.com/Chema12071)
 **GitHub**: [Jcampillo1207](https://github.com/Jcampillo1207)
