@@ -260,8 +260,6 @@ export { default as Droplet } from './icons/Droplet';
 export { default as E } from './icons/E';
 export { default as ECircle } from './icons/ECircle';
 export { default as Eclipse } from './icons/Eclipse';
-export { default as Ethereal } from './icons/Ethereal';
-export { default as EtherealLogo } from './icons/EtherealLogo';
 export { default as Eye1 } from './icons/Eye1';
 export { default as Eye1Closed } from './icons/Eye1Closed';
 export { default as Eye2 } from './icons/Eye2';

@@ -1,15 +1,17 @@
 {
-  "name": "ethereal-icons",
+  "name": "@intello/substance-icons",
   "version": "1.0.113",
-  "description": "Ethereal Icons is a React icon library that provides a collection of customizable and scalable SVG icons for modern web applications.",
+  "description": "Substance Icons is a lightweight React icon library that provides a collection of customizable and scalable SVG icons for modern web applications.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
     "generate-icons": "node scripts/generateIcons.js",
     "dev": "npm run generate-icons && npm run build",
     "ship": "npm run generate-icons && npm run build && npm version patch && npm publish --access public",
+    "deploy": "npm run generate-icons && npm run build && npm version patch && npm publish --access public && git push -u origin claude/npm-package-organization-011CUq9Q8QD8k8U2yGZ4jPkh && git push --tags",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -18,17 +20,20 @@
     "svg",
     "components",
     "library",
-    "ethereal-icons",
+    "substance-icons",
+    "intello",
     "typescript",
     "scalable",
     "customizable",
-    "react-icons"
+    "react-icons",
+    "lightweight",
+    "tree-shakeable"
   ],
   "author": "José Campillo",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jcampillo1207/react-ethereal-icons.git"
+    "url": "https://github.com/Jcampillo1207/substance-icons.git"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
@@ -37,6 +42,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@svgr/core": "^8.1.0",
     "@svgr/rollup": "^8.1.0",
     "@types/react": "^18.3.3",

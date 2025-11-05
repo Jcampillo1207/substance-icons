@@ -1,15 +1,16 @@
-# Ethereal Icons
+# Substance Icons
 
-A simple and elegant React icon library that converts your SVG files into optimized, customizable React components with TypeScript support.
+A lightweight and elegant React icon library that converts your SVG files into optimized, customizable React components with TypeScript support.
 
 ## Features
 
 - 🎨 **Simple**: Drop SVG files and generate React components automatically
-- 📦 **Optimized**: Built-in SVG optimization with SVGO
+- 📦 **Optimized**: Built-in SVG optimization with SVGO and code minification
 - 🔷 **TypeScript**: Full TypeScript support with auto-generated types
 - ⚡ **Lightweight**: Tree-shakable exports for minimal bundle size
 - 🎯 **Customizable**: Size, color, and className props for easy styling
 - 🔧 **Developer Friendly**: Simple API and great DX
+- 🚀 **Fast Deploy**: Single command to build, version, publish and push
 
 ## Installation
 
@@ -17,13 +18,13 @@ Install the library using npm or yarn:
 
 ```bash
 # Using npm
-npm install ethereal-icons@latest
+npm install @intello/substance-icons@latest
 
 # Using yarn
-yarn add ethereal-icons@latest
+yarn add @intello/substance-icons@latest
 
 # Using pnpm
-pnpm add ethereal-icons@latest
+pnpm add @intello/substance-icons@latest
 ```
 
 ## Usage
@@ -34,7 +35,7 @@ Import and use icons directly from the library:
 
 ```jsx
 import React from "react";
-import { User, Heart, Settings } from "ethereal-icons";
+import { User, Heart, Settings } from "@intello/substance-icons";
 
 const App = () => (
   <div>
@@ -49,19 +50,19 @@ export default App;
 
 ### Universal Icon Component
 
-Use the `Ethereal` component to dynamically render any icon by name:
+Use the `Substance` component to dynamically render any icon by name:
 
 ```jsx
 import React from "react";
-import { Ethereal } from "ethereal-icons";
+import { Substance } from "@intello/substance-icons";
 
 const App = () => {
   const iconName = "User"; // Can be dynamic
 
   return (
     <div>
-      <Ethereal name="User" size={32} color="blue" />
-      <Ethereal name={iconName} size={48} className="icon" />
+      <Substance name="User" size={32} color="blue" />
+      <Substance name={iconName} size={48} className="icon" />
     </div>
   );
 };
@@ -75,14 +76,14 @@ Full TypeScript support with auto-generated types for all icons:
 
 ```tsx
 import React from "react";
-import { Ethereal, IconName } from "ethereal-icons";
+import { Substance, IconName } from "@intello/substance-icons";
 
 const icons: IconName[] = ["User", "Heart", "Settings"];
 
 const App = () => (
   <div>
     {icons.map((icon) => (
-      <Ethereal
+      <Substance
         key={icon}
         name={icon}
         size={32}
@@ -140,7 +141,25 @@ npm run build
 
 # Development workflow (generate + build)
 npm run dev
+
+# Deploy with one command (generate + build + version + publish + git push)
+npm run deploy
 ```
+
+## Quick Deploy
+
+The `deploy` script allows you to build, update, and push your changes with a single command:
+
+```bash
+npm run deploy
+```
+
+This will:
+1. Generate all icons from SVG files
+2. Build the library with optimizations
+3. Bump the patch version
+4. Publish to npm
+5. Push changes to GitHub
 
 ## Contributing to Your Fork
 
@@ -152,7 +171,7 @@ npm run dev
 ## Issues and Suggestions
 
 If you encounter any issues or have suggestions for improvements, please:
-- Open an issue on [GitHub](https://github.com/Jcampillo1207/react-ethereal-icons)
+- Open an issue on [GitHub](https://github.com/Jcampillo1207/substance-icons)
 - Reach out on Twitter: [@Chema12071](https://x.com/Chema12071)
 
 ## License
@@ -162,6 +181,6 @@ This project is licensed under the ISC License. See the [LICENSE](./LICENSE) fil
 ---
 
 **Author**: José Campillo
-**Website**: [ethereal.dev](https://ethereal.dev)
+**Website**: [intello.dev](https://intello.dev)
 **Twitter**: [@Chema12071](https://x.com/Chema12071)
 **GitHub**: [Jcampillo1207](https://github.com/Jcampillo1207)
