@@ -2,8 +2,8 @@ import React from 'react';
 
 /**
  * @component
- * @name BigChevronDownDashed
- * @description Automatically generated SVG icon component for BigChevronDownDashed.
+ * @name PlusDashed
+ * @description Automatically generated SVG icon component for PlusDashed.
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
@@ -14,13 +14,13 @@ import React from 'react';
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-interface BigChevronDownDashedProps extends React.SVGProps<SVGSVGElement> {
+interface PlusDashedProps extends React.SVGProps<SVGSVGElement> {
   size?: number;
   color?: string;
   className?: string;
 }
 
-const BigChevronDownDashed: React.FC<BigChevronDownDashedProps> = ({
+const PlusDashed: React.FC<PlusDashedProps> = ({
   size = 24,
   color,
   className = "",
@@ -29,7 +29,7 @@ const BigChevronDownDashed: React.FC<BigChevronDownDashedProps> = ({
   <svg
     className={`${className}`}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-dasharray="4 4" stroke-linecap="square" stroke-width="2" d="m4 8 8 8 8-8"/></svg>
+    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-dasharray="4 4" stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7v14"/></svg>
 );
 
-export default BigChevronDownDashed;
+export default PlusDashed;

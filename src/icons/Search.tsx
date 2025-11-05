@@ -2,8 +2,8 @@ import React from 'react';
 
 /**
  * @component
- * @name BigChevronDownDashed
- * @description Automatically generated SVG icon component for BigChevronDownDashed.
+ * @name Search
+ * @description Automatically generated SVG icon component for Search.
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
@@ -14,13 +14,13 @@ import React from 'react';
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-interface BigChevronDownDashedProps extends React.SVGProps<SVGSVGElement> {
+interface SearchProps extends React.SVGProps<SVGSVGElement> {
   size?: number;
   color?: string;
   className?: string;
 }
 
-const BigChevronDownDashed: React.FC<BigChevronDownDashedProps> = ({
+const Search: React.FC<SearchProps> = ({
   size = 24,
   color,
   className = "",
@@ -29,7 +29,7 @@ const BigChevronDownDashed: React.FC<BigChevronDownDashedProps> = ({
   <svg
     className={`${className}`}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-dasharray="4 4" stroke-linecap="square" stroke-width="2" d="m4 8 8 8 8-8"/></svg>
+    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linejoin="round" stroke-width="2" d="m21 21-4.34-4.34M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
 );
 
-export default BigChevronDownDashed;
+export default Search;

@@ -7,6 +7,32 @@ import BigChevronRight from './BigChevronRight';
 import BigChevronRightDashed from './BigChevronRightDashed';
 import BigChevronUp from './BigChevronUp';
 import BigChevronUpDashed from './BigChevronUpDashed';
+import ChevronDown from './ChevronDown';
+import ChevronDownDashed from './ChevronDownDashed';
+import ChevronLeft from './ChevronLeft';
+import ChevronLeftDashed from './ChevronLeftDashed';
+import ChevronRight from './ChevronRight';
+import ChevronRightDashed from './ChevronRightDashed';
+import ChevronUp from './ChevronUp';
+import ChevronUpDashed from './ChevronUpDashed';
+import Dashboard from './Dashboard';
+import Dashboard2 from './Dashboard2';
+import Dashboard3 from './Dashboard3';
+import Dashboard4 from './Dashboard4';
+import Dashboard5 from './Dashboard5';
+import LayoutSidebarLeft from './LayoutSidebarLeft';
+import LayoutSidebarRight from './LayoutSidebarRight';
+import PanelLeftClose from './PanelLeftClose';
+import PanelLeftOpen from './PanelLeftOpen';
+import PanelRight from './PanelRight';
+import PanelRightClose from './PanelRightClose';
+import PanelRightOpen from './PanelRightOpen';
+import Plus from './Plus';
+import PlusDashed from './PlusDashed';
+import Search from './Search';
+import SearchDashed from './SearchDashed';
+import X from './X';
+import XDashed from './XDashed';
 import { IconName } from './types';
 
 /**
@@ -38,7 +64,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed };
+  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, LayoutSidebarLeft, LayoutSidebarRight, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {

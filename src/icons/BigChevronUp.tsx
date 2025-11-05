@@ -29,7 +29,7 @@ const BigChevronUp: React.FC<BigChevronUpProps> = ({
   <svg
     className={`${className}`}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-width="2" d="m4 16 8-8 8 8"/></svg>
+    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-width="2" d="m4 16 8-8 8 8"/></svg>
 );
 
 export default BigChevronUp;

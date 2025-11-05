@@ -29,7 +29,7 @@ const BigChevronRightDashed: React.FC<BigChevronRightDashedProps> = ({
   <svg
     className={`${className}`}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-dasharray="4 4" stroke-width="2" d="m8 4 8 8-8 8"/></svg>
+    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-dasharray="4 4" stroke-linecap="square" stroke-width="2" d="m8 4 8 8-8 8"/></svg>
 );
 
 export default BigChevronRightDashed;
