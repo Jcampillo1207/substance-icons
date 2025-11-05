@@ -21,6 +21,7 @@ export { default as Dashboard4 } from './icons/Dashboard4';
 export { default as Dashboard5 } from './icons/Dashboard5';
 export { default as LayoutSidebarLeft } from './icons/LayoutSidebarLeft';
 export { default as LayoutSidebarRight } from './icons/LayoutSidebarRight';
+export { default as PanelLeft } from './icons/PanelLeft';
 export { default as PanelLeftClose } from './icons/PanelLeftClose';
 export { default as PanelLeftOpen } from './icons/PanelLeftOpen';
 export { default as PanelRight } from './icons/PanelRight';

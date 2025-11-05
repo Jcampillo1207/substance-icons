@@ -24,6 +24,7 @@ export type IconName =
   | "LayoutSidebarRight"
   | "PanelLeftClose"
   | "PanelLeftOpen"
+  | "PanelLeft"
   | "PanelRightClose"
   | "PanelRightOpen"
   | "PanelRight"

@@ -22,6 +22,7 @@ import Dashboard4 from './Dashboard4';
 import Dashboard5 from './Dashboard5';
 import LayoutSidebarLeft from './LayoutSidebarLeft';
 import LayoutSidebarRight from './LayoutSidebarRight';
+import PanelLeft from './PanelLeft';
 import PanelLeftClose from './PanelLeftClose';
 import PanelLeftOpen from './PanelLeftOpen';
 import PanelRight from './PanelRight';
@@ -64,7 +65,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, LayoutSidebarLeft, LayoutSidebarRight, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, LayoutSidebarLeft, LayoutSidebarRight, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
