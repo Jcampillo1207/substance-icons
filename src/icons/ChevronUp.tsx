@@ -10,11 +10,11 @@ interface ChevronUpProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name ChevronUp
  * @description Automatically generated SVG icon component for ChevronUp.
+ * @preview ![ChevronUp](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Im0xNy41IDE0LjUtNS01LTUgNSIvPjwvc3ZnPg==)
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
- * @param {string} [props.base64] - Base64 representation: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Im0xNy41IDE0LjUtNS01LTUgNSIvPjwvc3ZnPg==
  * @author José Campillo
  * @website https://intelloai.com/resources/substance/icons
  * @twitter https://x.com/Chema12071
