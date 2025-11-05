@@ -77,7 +77,7 @@ const generateIconComponent = async (filePath, iconName) => {
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
- * @website ethereal.dev
+ * @website intello.dev
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
@@ -121,12 +121,12 @@ export default ${iconName};
 };
 
 /**
- * Generate the universal Icon component (Ethereal)
+ * Generate the universal Icon component (Substance)
  */
 const generateUniversalIconComponent = async () => {
   const files = await fs.readdir(iconsDir);
   const iconNames = files
-    .filter((file) => file.endsWith(".tsx") && file !== "Ethereal.tsx")
+    .filter((file) => file.endsWith(".tsx") && file !== "Substance.tsx")
     .map((file) => path.basename(file, ".tsx"));
 
   const iconImports = iconNames
@@ -139,7 +139,7 @@ import { IconName } from './types';
 
 /**
  * @component
- * @name Ethereal
+ * @name Substance
  * @description Universal icon component that renders any icon by name.
  * @param {object} props - Component props.
  * @param {IconName} props.name - The name of the icon to render.
@@ -147,7 +147,7 @@ import { IconName } from './types';
  * @param {string} [props.color] - Icon color.
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
- * @website ethereal.dev
+ * @website intello.dev
  * @twitter https://x.com/Chema12071
  * @returns {JSX.Element | null} JSX element representing the SVG icon.
  */
@@ -159,7 +159,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-const Ethereal: React.FC<IconProps> = ({
+const Substance: React.FC<IconProps> = ({
   name,
   size = 24,
   color,
@@ -184,12 +184,12 @@ const Ethereal: React.FC<IconProps> = ({
   );
 };
 
-export default Ethereal;
+export default Substance;
 `;
 
-  const componentPath = path.join(iconsDir, "Ethereal.tsx");
+  const componentPath = path.join(iconsDir, "Substance.tsx");
   await fs.outputFile(componentPath, componentCode);
-  console.log("  ✓ Generated Ethereal universal component");
+  console.log("  ✓ Generated Substance universal component");
 };
 
 /**
@@ -242,8 +242,8 @@ const processDirectory = async (dir) => {
  * Main function to generate all icons
  */
 const generateIcons = async () => {
-  console.log("🎨 Ethereal Icons Generator");
-  console.log("==========================\n");
+  console.log("🎨 Substance Icons Generator");
+  console.log("===========================\n");
 
   // Check if svg directory exists
   if (!fs.existsSync(svgDir)) {
