@@ -1,6 +1,6 @@
 {
   "name": "ethereal-icons",
-  "version": "1.0.112",
+  "version": "1.0.113",
   "description": "Ethereal Icons is a React icon library that provides a collection of customizable and scalable SVG icons for modern web applications.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -8,9 +8,9 @@
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
     "generate-icons": "node scripts/generateIcons.js",
-    "ship-git": "npm run generate-icons && npm run build && git add . && git commit -m 'Build' && git push origin main && npm version patch && npm publish && npm run create-release",
+    "dev": "npm run generate-icons && npm run build",
     "ship": "npm run generate-icons && npm run build && npm version patch && npm publish --access public",
-    "create-release": "node scripts/createRelease.js"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "react",
@@ -22,16 +22,17 @@
     "typescript",
     "scalable",
     "customizable",
-    "opacity",
     "react-icons"
   ],
   "author": "José Campillo",
   "license": "ISC",
-  "dependencies": {
-    "@million/lint": "^1.0.0-rc.76",
-    "inquirer": "^8.2.6",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jcampillo1207/react-ethereal-icons.git"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
@@ -41,12 +42,16 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "fs-extra": "^11.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rollup": "^4.18.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "svgo": "^3.3.2",
     "typescript": "^5.5.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ]
 }
