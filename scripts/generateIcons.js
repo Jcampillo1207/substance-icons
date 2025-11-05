@@ -9,10 +9,20 @@ const indexFile = path.join(__dirname, "../src/index.ts");
 const typesFile = path.join(__dirname, "../src/icons/types.ts");
 
 /**
+ * Convert SVG content to base64
+ */
+const svgToBase64 = (svgContent) => {
+  return Buffer.from(svgContent).toString("base64");
+};
+
+/**
  * Generate a React component from an SVG file
  */
 const generateIconComponent = async (filePath, iconName) => {
   let svgCode = await fs.readFile(filePath, "utf-8");
+
+  // Store original SVG for base64 conversion
+  const originalSvg = svgCode;
 
   // Optimize the SVG
   const optimizedSvg = optimize(svgCode, {
@@ -30,6 +40,9 @@ const generateIconComponent = async (filePath, iconName) => {
     ],
   });
   svgCode = optimizedSvg.data;
+
+  // Generate base64 from optimized SVG
+  const svgBase64 = svgToBase64(svgCode);
 
   // Transform the optimized SVG into a React component
   const jsxCode = await transform(
@@ -128,6 +141,7 @@ interface ${iconName}Props extends React.SVGProps<SVGSVGElement> {
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
+ * @param {string} [props.base64] - Base64 representation: data:image/svg+xml;base64,${svgBase64}
  * @author José Campillo
  * @website https://intelloai.com/resources/substance/icons
  * @twitter https://x.com/Chema12071

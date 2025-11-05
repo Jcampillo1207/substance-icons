@@ -14,6 +14,7 @@ interface BigChevronRightDashedProps extends React.SVGProps<SVGSVGElement> {
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
+ * @param {string} [props.base64] - Base64 representation: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0IDQiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTggNCA4IDgtOCA4Ii8+PC9zdmc+
  * @author José Campillo
  * @website https://intelloai.com/resources/substance/icons
  * @twitter https://x.com/Chema12071
