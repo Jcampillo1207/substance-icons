@@ -10,7 +10,7 @@ interface PanelLeftCloseProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name PanelLeftClose
  * @description Automatically generated SVG icon component for PanelLeftClose.
- * @preview ![PanelLeftClose](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik05IDIxSDNWM2g2bTAgMThoMTJWM0g5bTAgMThWM203LjUgNi0zIDMgMyAzIi8+PC9zdmc+)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik05IDIxSDNWM2g2bTAgMThoMTJWM0g5bTAgMThWM203LjUgNi0zIDMgMyAzIi8+PC9zdmc+)
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).

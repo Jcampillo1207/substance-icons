@@ -137,7 +137,7 @@ interface ${iconName}Props extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name ${iconName}
  * @description Automatically generated SVG icon component for ${iconName}.
- * @preview ![${iconName}](data:image/svg+xml;base64,${svgBase64})
+ * @preview ![img](data:image/svg+xml;base64,${svgBase64})
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).

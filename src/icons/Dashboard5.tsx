@@ -10,7 +10,7 @@ interface Dashboard5Props extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name Dashboard5
  * @description Automatically generated SVG icon component for Dashboard5.
- * @preview ![Dashboard5](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMiAxNEgzdjdoOXpNMjEgMTRoLTV2N2g1ek0yMSAzSDN2N2gxOHoiLz48L3N2Zz4=)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMiAxNEgzdjdoOXpNMjEgMTRoLTV2N2g1ek0yMSAzSDN2N2gxOHoiLz48L3N2Zz4=)
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
