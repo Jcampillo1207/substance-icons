@@ -20,6 +20,7 @@ import Dashboard2 from './Dashboard2';
 import Dashboard3 from './Dashboard3';
 import Dashboard4 from './Dashboard4';
 import Dashboard5 from './Dashboard5';
+import Files from './Files';
 import LayoutSidebarLeft from './LayoutSidebarLeft';
 import LayoutSidebarRight from './LayoutSidebarRight';
 import PanelLeft from './PanelLeft';
@@ -32,6 +33,8 @@ import Plus from './Plus';
 import PlusDashed from './PlusDashed';
 import Search from './Search';
 import SearchDashed from './SearchDashed';
+import User from './User';
+import Users from './Users';
 import X from './X';
 import XDashed from './XDashed';
 import { IconName } from './types';
@@ -65,7 +68,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, LayoutSidebarLeft, LayoutSidebarRight, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Files, LayoutSidebarLeft, LayoutSidebarRight, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, User, Users, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {

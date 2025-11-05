@@ -20,6 +20,7 @@ export type IconName =
   | "Dashboard4"
   | "Dashboard5"
   | "Dashboard"
+  | "Files"
   | "LayoutSidebarLeft"
   | "LayoutSidebarRight"
   | "PanelLeftClose"
@@ -32,6 +33,8 @@ export type IconName =
   | "Plus"
   | "SearchDashed"
   | "Search"
+  | "User"
+  | "Users"
   | "XDashed"
   | "X"
 ;
