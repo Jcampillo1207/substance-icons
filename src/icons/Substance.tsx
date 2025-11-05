@@ -23,6 +23,8 @@ import Dashboard5 from './Dashboard5';
 import Files from './Files';
 import LayoutSidebarLeft from './LayoutSidebarLeft';
 import LayoutSidebarRight from './LayoutSidebarRight';
+import LogIn from './LogIn';
+import LogOut from './LogOut';
 import PanelLeft from './PanelLeft';
 import PanelLeftClose from './PanelLeftClose';
 import PanelLeftOpen from './PanelLeftOpen';
@@ -33,6 +35,7 @@ import Plus from './Plus';
 import PlusDashed from './PlusDashed';
 import Search from './Search';
 import SearchDashed from './SearchDashed';
+import Settings from './Settings';
 import User from './User';
 import Users from './Users';
 import X from './X';
@@ -68,7 +71,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Files, LayoutSidebarLeft, LayoutSidebarRight, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, User, Users, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Files, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, User, Users, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
