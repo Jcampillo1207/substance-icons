@@ -1,4 +1,8 @@
 import React from 'react';
+import ArrowDown from './ArrowDown';
+import ArrowLeft from './ArrowLeft';
+import ArrowRight from './ArrowRight';
+import ArrowUp from './ArrowUp';
 import BigChevronDown from './BigChevronDown';
 import BigChevronDownDashed from './BigChevronDownDashed';
 import BigChevronLeft from './BigChevronLeft';
@@ -20,6 +24,12 @@ import Dashboard2 from './Dashboard2';
 import Dashboard3 from './Dashboard3';
 import Dashboard4 from './Dashboard4';
 import Dashboard5 from './Dashboard5';
+import File from './File';
+import FileCog from './FileCog';
+import FileEdit from './FileEdit';
+import FileLock from './FileLock';
+import FileUnlock from './FileUnlock';
+import FileZip from './FileZip';
 import Files from './Files';
 import LayoutSidebarLeft from './LayoutSidebarLeft';
 import LayoutSidebarRight from './LayoutSidebarRight';
@@ -71,7 +81,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Files, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, User, Users, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, User, Users, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
