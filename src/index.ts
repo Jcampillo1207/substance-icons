@@ -31,6 +31,7 @@ export { default as FileLock } from './icons/FileLock';
 export { default as FileUnlock } from './icons/FileUnlock';
 export { default as FileZip } from './icons/FileZip';
 export { default as Files } from './icons/Files';
+export { default as Home } from './icons/Home';
 export { default as LayoutSidebarLeft } from './icons/LayoutSidebarLeft';
 export { default as LayoutSidebarRight } from './icons/LayoutSidebarRight';
 export { default as LogIn } from './icons/LogIn';

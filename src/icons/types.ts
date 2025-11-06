@@ -32,6 +32,7 @@ export type IconName =
   | "FileZip"
   | "File"
   | "Files"
+  | "Home"
   | "LayoutSidebarLeft"
   | "LayoutSidebarRight"
   | "LogIn"

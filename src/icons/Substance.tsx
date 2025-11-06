@@ -32,6 +32,7 @@ import FileLock from './FileLock';
 import FileUnlock from './FileUnlock';
 import FileZip from './FileZip';
 import Files from './Files';
+import Home from './Home';
 import LayoutSidebarLeft from './LayoutSidebarLeft';
 import LayoutSidebarRight from './LayoutSidebarRight';
 import LogIn from './LogIn';
@@ -82,7 +83,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, Buildings, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, User, Users, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, Buildings, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, User, Users, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
