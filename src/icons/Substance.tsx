@@ -39,6 +39,8 @@ import LayoutSidebarLeft from './LayoutSidebarLeft';
 import LayoutSidebarRight from './LayoutSidebarRight';
 import LogIn from './LogIn';
 import LogOut from './LogOut';
+import Monitor from './Monitor';
+import Moon from './Moon';
 import PanelLeft from './PanelLeft';
 import PanelLeftClose from './PanelLeftClose';
 import PanelLeftOpen from './PanelLeftOpen';
@@ -50,6 +52,7 @@ import PlusDashed from './PlusDashed';
 import Search from './Search';
 import SearchDashed from './SearchDashed';
 import Settings from './Settings';
+import Sun from './Sun';
 import User from './User';
 import Users from './Users';
 import X from './X';
@@ -85,7 +88,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Circle, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, User, Users, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Circle, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, Monitor, Moon, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, Sun, User, Users, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
