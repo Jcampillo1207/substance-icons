@@ -11,6 +11,7 @@ export { default as BigChevronRightDashed } from './icons/BigChevronRightDashed'
 export { default as BigChevronUp } from './icons/BigChevronUp';
 export { default as BigChevronUpDashed } from './icons/BigChevronUpDashed';
 export { default as Buildings } from './icons/Buildings';
+export { default as Check } from './icons/Check';
 export { default as ChevronDown } from './icons/ChevronDown';
 export { default as ChevronDownDashed } from './icons/ChevronDownDashed';
 export { default as ChevronLeft } from './icons/ChevronLeft';
@@ -19,6 +20,7 @@ export { default as ChevronRight } from './icons/ChevronRight';
 export { default as ChevronRightDashed } from './icons/ChevronRightDashed';
 export { default as ChevronUp } from './icons/ChevronUp';
 export { default as ChevronUpDashed } from './icons/ChevronUpDashed';
+export { default as Circle } from './icons/Circle';
 export { default as Dashboard } from './icons/Dashboard';
 export { default as Dashboard2 } from './icons/Dashboard2';
 export { default as Dashboard3 } from './icons/Dashboard3';

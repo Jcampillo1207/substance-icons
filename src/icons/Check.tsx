@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface FilesProps extends React.SVGProps<SVGSVGElement> {
+interface CheckProps extends React.SVGProps<SVGSVGElement> {
   size?: number;
   color?: string;
   className?: string;
@@ -8,9 +8,9 @@ interface FilesProps extends React.SVGProps<SVGSVGElement> {
 
 /**
  * @component
- * @name Files
- * @description Automatically generated SVG icon component for Files.
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xNSAyaDJsNCA0djFtLTYtNUg5djE2aDEyVjdtLTYtNXY1aDZNNSA3SDN2MTVoMTIiLz48L3N2Zz4=)
+ * @name Check
+ * @description Automatically generated SVG icon component for Check.
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0yMCA2IDkgMTdsLTUtNSIvPjwvc3ZnPg==)
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
@@ -21,7 +21,7 @@ interface FilesProps extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-const Files: React.FC<FilesProps> = ({
+const Check: React.FC<CheckProps> = ({
   size = 24,
   color,
   className = "",
@@ -30,7 +30,7 @@ const Files: React.FC<FilesProps> = ({
   <svg
     className={`${className}`}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-width="2" d="M15 2h2l4 4v1m-6-5H9v16h12V7m-6-5v5h6M5 7H3v15h12"/></svg>
+    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-width="2" d="M20 6 9 17l-5-5"/></svg>
 );
 
-export default Files;
+export default Check;

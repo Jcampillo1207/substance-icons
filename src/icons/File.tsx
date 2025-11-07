@@ -10,7 +10,7 @@ interface FileProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name File
  * @description Automatically generated SVG icon component for File.
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMyAzSDR2MThoMTZWMTBtLTctN2gybDUgNXYybS03LTd2N2g3Ii8+PC9zdmc+)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMyAySDR2MjBoMTZWOW0tNy03aDJsNSA1djJtLTctN3Y3aDciLz48L3N2Zz4=)
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
@@ -30,7 +30,7 @@ const File: React.FC<FileProps> = ({
   <svg
     className={`${className}`}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-width="2" d="M13 3H4v18h16V10m-7-7h2l5 5v2m-7-7v7h7"/></svg>
+    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-width="2" d="M13 2H4v20h16V9m-7-7h2l5 5v2m-7-7v7h7"/></svg>
 );
 
 export default File;
