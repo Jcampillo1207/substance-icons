@@ -3,6 +3,7 @@ import ArrowDown from './ArrowDown';
 import ArrowLeft from './ArrowLeft';
 import ArrowRight from './ArrowRight';
 import ArrowUp from './ArrowUp';
+import Ban from './Ban';
 import BigChevronDown from './BigChevronDown';
 import BigChevronDownDashed from './BigChevronDownDashed';
 import BigChevronLeft from './BigChevronLeft';
@@ -22,6 +23,8 @@ import ChevronRightDashed from './ChevronRightDashed';
 import ChevronUp from './ChevronUp';
 import ChevronUpDashed from './ChevronUpDashed';
 import Circle from './Circle';
+import CircleCheck from './CircleCheck';
+import CircleX from './CircleX';
 import Dashboard from './Dashboard';
 import Dashboard2 from './Dashboard2';
 import Dashboard3 from './Dashboard3';
@@ -35,6 +38,7 @@ import FileUnlock from './FileUnlock';
 import FileZip from './FileZip';
 import Files from './Files';
 import Home from './Home';
+import Info from './Info';
 import LayoutSidebarLeft from './LayoutSidebarLeft';
 import LayoutSidebarRight from './LayoutSidebarRight';
 import LogIn from './LogIn';
@@ -88,7 +92,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Circle, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, Monitor, Moon, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, Sun, User, Users, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Circle, CircleCheck, CircleX, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, Info, LayoutSidebarLeft, LayoutSidebarRight, LogIn, LogOut, Monitor, Moon, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, Sun, User, Users, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
