@@ -40,6 +40,8 @@ export { default as Home } from './icons/Home';
 export { default as Info } from './icons/Info';
 export { default as LayoutSidebarLeft } from './icons/LayoutSidebarLeft';
 export { default as LayoutSidebarRight } from './icons/LayoutSidebarRight';
+export { default as Loader } from './icons/Loader';
+export { default as Loader2 } from './icons/Loader2';
 export { default as LogIn } from './icons/LogIn';
 export { default as LogOut } from './icons/LogOut';
 export { default as Monitor } from './icons/Monitor';

@@ -41,6 +41,8 @@ export type IconName =
   | "Info"
   | "LayoutSidebarLeft"
   | "LayoutSidebarRight"
+  | "Loader2"
+  | "Loader"
   | "LogIn"
   | "LogOut"
   | "Monitor"
