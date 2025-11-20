@@ -23,6 +23,8 @@ import ChevronRight from './ChevronRight';
 import ChevronRightDashed from './ChevronRightDashed';
 import ChevronUp from './ChevronUp';
 import ChevronUpDashed from './ChevronUpDashed';
+import ChevronsLeftRight from './ChevronsLeftRight';
+import ChevronsUpDown from './ChevronsUpDown';
 import Circle from './Circle';
 import CircleCheck from './CircleCheck';
 import CircleX from './CircleX';
@@ -100,7 +102,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, Circle, CircleCheck, CircleX, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, Info, LayoutSidebarLeft, LayoutSidebarRight, Loader, Loader2, LogIn, LogOut, Monitor, Moon, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, Sun, Ticket, TicketCheck, TicketMinus, TicketPlus, Tickets, User, Users, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, ChevronsLeftRight, ChevronsUpDown, Circle, CircleCheck, CircleX, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, Info, LayoutSidebarLeft, LayoutSidebarRight, Loader, Loader2, LogIn, LogOut, Monitor, Moon, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Plus, PlusDashed, Search, SearchDashed, Settings, Sun, Ticket, TicketCheck, TicketMinus, TicketPlus, Tickets, User, Users, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {

@@ -23,6 +23,8 @@ export type IconName =
   | "ChevronRight"
   | "ChevronUpDashed"
   | "ChevronUp"
+  | "ChevronsLeftRight"
+  | "ChevronsUpDown"
   | "CircleCheck"
   | "CircleX"
   | "Circle"
