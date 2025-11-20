@@ -11,6 +11,7 @@ export { default as BigChevronRight } from './icons/BigChevronRight';
 export { default as BigChevronRightDashed } from './icons/BigChevronRightDashed';
 export { default as BigChevronUp } from './icons/BigChevronUp';
 export { default as BigChevronUpDashed } from './icons/BigChevronUpDashed';
+export { default as BookLetter } from './icons/BookLetter';
 export { default as Buildings } from './icons/Buildings';
 export { default as Check } from './icons/Check';
 export { default as ChevronDown } from './icons/ChevronDown';
