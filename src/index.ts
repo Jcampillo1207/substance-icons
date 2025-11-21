@@ -58,6 +58,7 @@ export { default as PanelLeftOpen } from './icons/PanelLeftOpen';
 export { default as PanelRight } from './icons/PanelRight';
 export { default as PanelRightClose } from './icons/PanelRightClose';
 export { default as PanelRightOpen } from './icons/PanelRightOpen';
+export { default as Pin } from './icons/Pin';
 export { default as Plus } from './icons/Plus';
 export { default as PlusDashed } from './icons/PlusDashed';
 export { default as Search } from './icons/Search';

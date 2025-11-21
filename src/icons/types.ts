@@ -59,6 +59,7 @@ export type IconName =
   | "PanelRightClose"
   | "PanelRightOpen"
   | "PanelRight"
+  | "Pin"
   | "PlusDashed"
   | "Plus"
   | "SearchDashed"
