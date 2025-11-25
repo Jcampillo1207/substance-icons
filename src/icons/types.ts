@@ -49,6 +49,7 @@ export type IconName =
   | "Loader"
   | "LogIn"
   | "LogOut"
+  | "Map"
   | "Monitor"
   | "Moon"
   | "MoreHorizontal"
