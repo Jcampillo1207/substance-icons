@@ -1,6 +1,6 @@
 {
   "name": "@intello/substance-icons",
-  "version": "1.0.139",
+  "version": "1.0.140",
   "description": "Substance Icons is a lightweight React icon library that provides a collection of customizable and scalable SVG icons for modern web applications.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
