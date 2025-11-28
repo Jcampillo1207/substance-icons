@@ -50,6 +50,7 @@ import Loader2 from './Loader2';
 import LogIn from './LogIn';
 import LogOut from './LogOut';
 import Map from './Map';
+import Menu from './Menu';
 import Monitor from './Monitor';
 import Moon from './Moon';
 import MoreHorizontal from './MoreHorizontal';
@@ -109,7 +110,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, ChevronsLeftRight, ChevronsUpDown, Circle, CircleCheck, CircleX, Copy, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, Info, LayoutSidebarLeft, LayoutSidebarRight, Loader, Loader2, LogIn, LogOut, Map, Monitor, Moon, MoreHorizontal, MoreVertical, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Pen, Pencil, Pin, Plus, PlusDashed, Search, SearchDashed, Settings, Sun, Ticket, TicketCheck, TicketMinus, TicketPlus, Tickets, User, Users, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, ChevronsLeftRight, ChevronsUpDown, Circle, CircleCheck, CircleX, Copy, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Home, Info, LayoutSidebarLeft, LayoutSidebarRight, Loader, Loader2, LogIn, LogOut, Map, Menu, Monitor, Moon, MoreHorizontal, MoreVertical, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, Pen, Pencil, Pin, Plus, PlusDashed, Search, SearchDashed, Settings, Sun, Ticket, TicketCheck, TicketMinus, TicketPlus, Tickets, User, Users, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
