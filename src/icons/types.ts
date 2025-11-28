@@ -48,6 +48,8 @@ export type IconName =
   | "LayoutSidebarRight"
   | "Loader2"
   | "Loader"
+  | "LockOpen"
+  | "Lock"
   | "LogIn"
   | "LogOut"
   | "Map"

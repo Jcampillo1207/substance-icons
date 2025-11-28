@@ -47,6 +47,8 @@ export { default as LayoutSidebarLeft } from './icons/LayoutSidebarLeft';
 export { default as LayoutSidebarRight } from './icons/LayoutSidebarRight';
 export { default as Loader } from './icons/Loader';
 export { default as Loader2 } from './icons/Loader2';
+export { default as Lock } from './icons/Lock';
+export { default as LockOpen } from './icons/LockOpen';
 export { default as LogIn } from './icons/LogIn';
 export { default as LogOut } from './icons/LogOut';
 export { default as Map } from './icons/Map';
