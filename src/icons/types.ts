@@ -13,6 +13,7 @@ export type IconName =
   | "BigChevronUpDashed"
   | "BigChevronUp"
   | "BookLetter"
+  | "Building"
   | "Buildings"
   | "Check"
   | "ChevronDownDashed"
