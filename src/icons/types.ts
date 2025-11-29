@@ -40,6 +40,7 @@ export type IconName =
   | "Dashboard4"
   | "Dashboard5"
   | "Dashboard"
+  | "ExternalLink"
   | "FileCog"
   | "FileEdit"
   | "FileLock"
