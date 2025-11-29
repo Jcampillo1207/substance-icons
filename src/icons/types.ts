@@ -33,6 +33,7 @@ export type IconName =
   | "CircleCheck"
   | "CircleX"
   | "Circle"
+  | "ContactRound"
   | "Copy"
   | "Dashboard2"
   | "Dashboard3"

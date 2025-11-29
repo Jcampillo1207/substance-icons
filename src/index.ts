@@ -32,6 +32,7 @@ export { default as ChevronsUpDown } from './icons/ChevronsUpDown';
 export { default as Circle } from './icons/Circle';
 export { default as CircleCheck } from './icons/CircleCheck';
 export { default as CircleX } from './icons/CircleX';
+export { default as ContactRound } from './icons/ContactRound';
 export { default as Copy } from './icons/Copy';
 export { default as Dashboard } from './icons/Dashboard';
 export { default as Dashboard2 } from './icons/Dashboard2';
