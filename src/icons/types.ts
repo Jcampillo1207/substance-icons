@@ -73,6 +73,7 @@ export type IconName =
   | "Pin"
   | "PlusDashed"
   | "Plus"
+  | "Save"
   | "SearchDashed"
   | "Search"
   | "Settings"
