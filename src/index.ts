@@ -79,6 +79,7 @@ export { default as TicketMinus } from './icons/TicketMinus';
 export { default as TicketPlus } from './icons/TicketPlus';
 export { default as Tickets } from './icons/Tickets';
 export { default as User } from './icons/User';
+export { default as UserCog } from './icons/UserCog';
 export { default as UserMinus } from './icons/UserMinus';
 export { default as UserPlus } from './icons/UserPlus';
 export { default as Users } from './icons/Users';
