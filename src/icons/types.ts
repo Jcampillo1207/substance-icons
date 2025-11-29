@@ -78,6 +78,7 @@ export type IconName =
   | "TicketPlus"
   | "Ticket"
   | "Tickets"
+  | "Trash2"
   | "Trash"
   | "UserCog"
   | "UserMinus"
