@@ -1,7 +1,11 @@
 export type IconName =
+  | "ArrowDownLeft"
+  | "ArrowDownRight"
   | "ArrowDown"
   | "ArrowLeft"
   | "ArrowRight"
+  | "ArrowUpLeft"
+  | "ArrowUpRight"
   | "ArrowUp"
   | "Ban"
   | "BigChevronDownDashed"

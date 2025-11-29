@@ -1,7 +1,11 @@
 export { default as ArrowDown } from './icons/ArrowDown';
+export { default as ArrowDownLeft } from './icons/ArrowDownLeft';
+export { default as ArrowDownRight } from './icons/ArrowDownRight';
 export { default as ArrowLeft } from './icons/ArrowLeft';
 export { default as ArrowRight } from './icons/ArrowRight';
 export { default as ArrowUp } from './icons/ArrowUp';
+export { default as ArrowUpLeft } from './icons/ArrowUpLeft';
+export { default as ArrowUpRight } from './icons/ArrowUpRight';
 export { default as Ban } from './icons/Ban';
 export { default as BigChevronDown } from './icons/BigChevronDown';
 export { default as BigChevronDownDashed } from './icons/BigChevronDownDashed';
