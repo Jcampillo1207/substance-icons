@@ -1,3 +1,4 @@
+export { default as AlertTriangle } from './icons/AlertTriangle';
 export { default as ArrowDown } from './icons/ArrowDown';
 export { default as ArrowDownLeft } from './icons/ArrowDownLeft';
 export { default as ArrowDownRight } from './icons/ArrowDownRight';
