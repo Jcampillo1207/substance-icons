@@ -150,8 +150,9 @@ interface ${iconName}Props extends React.SVGProps<SVGSVGElement> {
 
 const ${iconName}: React.FC<${iconName}Props> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   ${svgContent}
@@ -212,7 +213,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 const Substance: React.FC<IconProps> = ({
   name,
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
   ...props
 }) => {

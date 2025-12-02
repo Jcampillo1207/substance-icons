@@ -23,8 +23,9 @@ interface PinProps extends React.SVGProps<SVGSVGElement> {
 
 const Pin: React.FC<PinProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

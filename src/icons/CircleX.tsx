@@ -23,8 +23,9 @@ interface CircleXProps extends React.SVGProps<SVGSVGElement> {
 
 const CircleX: React.FC<CircleXProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

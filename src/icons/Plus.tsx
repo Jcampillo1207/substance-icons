@@ -23,8 +23,9 @@ interface PlusProps extends React.SVGProps<SVGSVGElement> {
 
 const Plus: React.FC<PlusProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

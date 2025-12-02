@@ -23,8 +23,9 @@ interface ChevronsLeftRightProps extends React.SVGProps<SVGSVGElement> {
 
 const ChevronsLeftRight: React.FC<ChevronsLeftRightProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

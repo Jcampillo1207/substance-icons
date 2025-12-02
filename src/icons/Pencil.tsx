@@ -23,8 +23,9 @@ interface PencilProps extends React.SVGProps<SVGSVGElement> {
 
 const Pencil: React.FC<PencilProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

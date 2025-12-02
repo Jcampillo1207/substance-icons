@@ -23,8 +23,9 @@ interface PlusDashedProps extends React.SVGProps<SVGSVGElement> {
 
 const PlusDashed: React.FC<PlusDashedProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

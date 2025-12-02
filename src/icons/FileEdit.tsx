@@ -23,8 +23,9 @@ interface FileEditProps extends React.SVGProps<SVGSVGElement> {
 
 const FileEdit: React.FC<FileEditProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

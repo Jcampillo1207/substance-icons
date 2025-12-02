@@ -23,8 +23,9 @@ interface ChevronLeftDashedProps extends React.SVGProps<SVGSVGElement> {
 
 const ChevronLeftDashed: React.FC<ChevronLeftDashedProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

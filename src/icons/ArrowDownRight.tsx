@@ -23,8 +23,9 @@ interface ArrowDownRightProps extends React.SVGProps<SVGSVGElement> {
 
 const ArrowDownRight: React.FC<ArrowDownRightProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

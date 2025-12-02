@@ -23,8 +23,9 @@ interface FileZipProps extends React.SVGProps<SVGSVGElement> {
 
 const FileZip: React.FC<FileZipProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

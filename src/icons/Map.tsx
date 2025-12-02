@@ -23,8 +23,9 @@ interface MapProps extends React.SVGProps<SVGSVGElement> {
 
 const Map: React.FC<MapProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

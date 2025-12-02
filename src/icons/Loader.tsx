@@ -23,8 +23,9 @@ interface LoaderProps extends React.SVGProps<SVGSVGElement> {
 
 const Loader: React.FC<LoaderProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

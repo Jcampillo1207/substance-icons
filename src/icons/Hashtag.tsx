@@ -23,8 +23,9 @@ interface HashtagProps extends React.SVGProps<SVGSVGElement> {
 
 const Hashtag: React.FC<HashtagProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

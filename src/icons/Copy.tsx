@@ -23,8 +23,9 @@ interface CopyProps extends React.SVGProps<SVGSVGElement> {
 
 const Copy: React.FC<CopyProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

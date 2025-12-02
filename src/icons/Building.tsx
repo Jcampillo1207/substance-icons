@@ -23,8 +23,9 @@ interface BuildingProps extends React.SVGProps<SVGSVGElement> {
 
 const Building: React.FC<BuildingProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

@@ -23,8 +23,9 @@ interface LogOutProps extends React.SVGProps<SVGSVGElement> {
 
 const LogOut: React.FC<LogOutProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

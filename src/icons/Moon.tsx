@@ -23,8 +23,9 @@ interface MoonProps extends React.SVGProps<SVGSVGElement> {
 
 const Moon: React.FC<MoonProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

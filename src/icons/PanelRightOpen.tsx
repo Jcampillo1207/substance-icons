@@ -23,8 +23,9 @@ interface PanelRightOpenProps extends React.SVGProps<SVGSVGElement> {
 
 const PanelRightOpen: React.FC<PanelRightOpenProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

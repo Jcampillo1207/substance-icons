@@ -23,8 +23,9 @@ interface ChevronDownDashedProps extends React.SVGProps<SVGSVGElement> {
 
 const ChevronDownDashed: React.FC<ChevronDownDashedProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

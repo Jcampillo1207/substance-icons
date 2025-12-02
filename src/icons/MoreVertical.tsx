@@ -23,8 +23,9 @@ interface MoreVerticalProps extends React.SVGProps<SVGSVGElement> {
 
 const MoreVertical: React.FC<MoreVerticalProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

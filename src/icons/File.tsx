@@ -23,8 +23,9 @@ interface FileProps extends React.SVGProps<SVGSVGElement> {
 
 const File: React.FC<FileProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

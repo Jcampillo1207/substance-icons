@@ -23,8 +23,9 @@ interface SunProps extends React.SVGProps<SVGSVGElement> {
 
 const Sun: React.FC<SunProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

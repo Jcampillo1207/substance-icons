@@ -23,8 +23,9 @@ interface CheckProps extends React.SVGProps<SVGSVGElement> {
 
 const Check: React.FC<CheckProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

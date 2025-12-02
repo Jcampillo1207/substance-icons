@@ -23,8 +23,9 @@ interface FileLockProps extends React.SVGProps<SVGSVGElement> {
 
 const FileLock: React.FC<FileLockProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

@@ -23,8 +23,9 @@ interface ChevronUpProps extends React.SVGProps<SVGSVGElement> {
 
 const ChevronUp: React.FC<ChevronUpProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

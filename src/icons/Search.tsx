@@ -23,8 +23,9 @@ interface SearchProps extends React.SVGProps<SVGSVGElement> {
 
 const Search: React.FC<SearchProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

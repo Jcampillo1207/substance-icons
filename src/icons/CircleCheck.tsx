@@ -23,8 +23,9 @@ interface CircleCheckProps extends React.SVGProps<SVGSVGElement> {
 
 const CircleCheck: React.FC<CircleCheckProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

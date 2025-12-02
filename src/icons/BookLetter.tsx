@@ -23,8 +23,9 @@ interface BookLetterProps extends React.SVGProps<SVGSVGElement> {
 
 const BookLetter: React.FC<BookLetterProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

@@ -23,8 +23,9 @@ interface MoreHorizontalProps extends React.SVGProps<SVGSVGElement> {
 
 const MoreHorizontal: React.FC<MoreHorizontalProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

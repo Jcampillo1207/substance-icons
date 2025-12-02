@@ -23,8 +23,9 @@ interface ExternalLinkProps extends React.SVGProps<SVGSVGElement> {
 
 const ExternalLink: React.FC<ExternalLinkProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

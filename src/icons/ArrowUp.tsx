@@ -23,8 +23,9 @@ interface ArrowUpProps extends React.SVGProps<SVGSVGElement> {
 
 const ArrowUp: React.FC<ArrowUpProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

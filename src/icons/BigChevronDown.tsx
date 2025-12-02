@@ -23,8 +23,9 @@ interface BigChevronDownProps extends React.SVGProps<SVGSVGElement> {
 
 const BigChevronDown: React.FC<BigChevronDownProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

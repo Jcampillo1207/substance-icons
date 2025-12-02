@@ -23,8 +23,9 @@ interface SettingsProps extends React.SVGProps<SVGSVGElement> {
 
 const Settings: React.FC<SettingsProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

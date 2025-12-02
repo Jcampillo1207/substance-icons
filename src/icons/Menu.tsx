@@ -23,8 +23,9 @@ interface MenuProps extends React.SVGProps<SVGSVGElement> {
 
 const Menu: React.FC<MenuProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

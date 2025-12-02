@@ -23,8 +23,9 @@ interface HomeProps extends React.SVGProps<SVGSVGElement> {
 
 const Home: React.FC<HomeProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

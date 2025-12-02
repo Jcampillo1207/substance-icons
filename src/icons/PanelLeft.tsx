@@ -23,8 +23,9 @@ interface PanelLeftProps extends React.SVGProps<SVGSVGElement> {
 
 const PanelLeft: React.FC<PanelLeftProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

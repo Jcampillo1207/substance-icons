@@ -23,8 +23,9 @@ interface PenProps extends React.SVGProps<SVGSVGElement> {
 
 const Pen: React.FC<PenProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

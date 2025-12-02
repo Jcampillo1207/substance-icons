@@ -23,8 +23,9 @@ interface FlagProps extends React.SVGProps<SVGSVGElement> {
 
 const Flag: React.FC<FlagProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

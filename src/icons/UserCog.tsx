@@ -23,8 +23,9 @@ interface UserCogProps extends React.SVGProps<SVGSVGElement> {
 
 const UserCog: React.FC<UserCogProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

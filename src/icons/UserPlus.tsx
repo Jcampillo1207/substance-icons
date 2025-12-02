@@ -23,8 +23,9 @@ interface UserPlusProps extends React.SVGProps<SVGSVGElement> {
 
 const UserPlus: React.FC<UserPlusProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

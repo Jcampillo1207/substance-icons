@@ -23,8 +23,9 @@ interface LogInProps extends React.SVGProps<SVGSVGElement> {
 
 const LogIn: React.FC<LogInProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

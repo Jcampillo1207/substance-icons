@@ -23,8 +23,9 @@ interface SaveProps extends React.SVGProps<SVGSVGElement> {
 
 const Save: React.FC<SaveProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

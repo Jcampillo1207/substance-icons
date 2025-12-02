@@ -23,8 +23,9 @@ interface BigChevronRightDashedProps extends React.SVGProps<SVGSVGElement> {
 
 const BigChevronRightDashed: React.FC<BigChevronRightDashedProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

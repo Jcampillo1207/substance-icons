@@ -23,8 +23,9 @@ interface DashboardProps extends React.SVGProps<SVGSVGElement> {
 
 const Dashboard: React.FC<DashboardProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

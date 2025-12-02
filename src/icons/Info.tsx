@@ -23,8 +23,9 @@ interface InfoProps extends React.SVGProps<SVGSVGElement> {
 
 const Info: React.FC<InfoProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

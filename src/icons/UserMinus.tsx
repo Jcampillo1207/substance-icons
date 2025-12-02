@@ -23,8 +23,9 @@ interface UserMinusProps extends React.SVGProps<SVGSVGElement> {
 
 const UserMinus: React.FC<UserMinusProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

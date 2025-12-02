@@ -23,8 +23,9 @@ interface ContactRoundProps extends React.SVGProps<SVGSVGElement> {
 
 const ContactRound: React.FC<ContactRoundProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

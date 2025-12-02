@@ -23,8 +23,9 @@ interface LockOpenProps extends React.SVGProps<SVGSVGElement> {
 
 const LockOpen: React.FC<LockOpenProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

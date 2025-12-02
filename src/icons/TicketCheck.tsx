@@ -23,8 +23,9 @@ interface TicketCheckProps extends React.SVGProps<SVGSVGElement> {
 
 const TicketCheck: React.FC<TicketCheckProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

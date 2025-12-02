@@ -23,8 +23,9 @@ interface XProps extends React.SVGProps<SVGSVGElement> {
 
 const X: React.FC<XProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

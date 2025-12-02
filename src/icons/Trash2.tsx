@@ -23,8 +23,9 @@ interface Trash2Props extends React.SVGProps<SVGSVGElement> {
 
 const Trash2: React.FC<Trash2Props> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

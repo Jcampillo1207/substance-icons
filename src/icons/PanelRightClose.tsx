@@ -23,8 +23,9 @@ interface PanelRightCloseProps extends React.SVGProps<SVGSVGElement> {
 
 const PanelRightClose: React.FC<PanelRightCloseProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

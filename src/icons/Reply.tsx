@@ -23,8 +23,9 @@ interface ReplyProps extends React.SVGProps<SVGSVGElement> {
 
 const Reply: React.FC<ReplyProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

@@ -23,8 +23,9 @@ interface SearchDashedProps extends React.SVGProps<SVGSVGElement> {
 
 const SearchDashed: React.FC<SearchDashedProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

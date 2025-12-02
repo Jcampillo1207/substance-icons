@@ -23,8 +23,9 @@ interface XDashedProps extends React.SVGProps<SVGSVGElement> {
 
 const XDashed: React.FC<XDashedProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

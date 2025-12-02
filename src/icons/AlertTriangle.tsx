@@ -23,8 +23,9 @@ interface AlertTriangleProps extends React.SVGProps<SVGSVGElement> {
 
 const AlertTriangle: React.FC<AlertTriangleProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

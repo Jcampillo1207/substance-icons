@@ -23,8 +23,9 @@ interface BanProps extends React.SVGProps<SVGSVGElement> {
 
 const Ban: React.FC<BanProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg

@@ -23,8 +23,9 @@ interface FileCogProps extends React.SVGProps<SVGSVGElement> {
 
 const FileCog: React.FC<FileCogProps> = ({
   size = 24,
-  color,
+  color = "currentColor",
   className = "",
+  style,
   ...props
 }) => (
   <svg
