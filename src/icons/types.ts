@@ -32,6 +32,7 @@ export type IconName =
   | "ChevronsLeftRight"
   | "ChevronsUpDown"
   | "CircleCheck"
+  | "CircleDot"
   | "CircleX"
   | "Circle"
   | "ContactRound"
