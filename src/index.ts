@@ -47,6 +47,7 @@ export { default as FileLock } from './icons/FileLock';
 export { default as FileUnlock } from './icons/FileUnlock';
 export { default as FileZip } from './icons/FileZip';
 export { default as Files } from './icons/Files';
+export { default as Hashtag } from './icons/Hashtag';
 export { default as Home } from './icons/Home';
 export { default as Info } from './icons/Info';
 export { default as LayoutSidebarLeft } from './icons/LayoutSidebarLeft';

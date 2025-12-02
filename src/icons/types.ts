@@ -48,6 +48,7 @@ export type IconName =
   | "FileZip"
   | "File"
   | "Files"
+  | "Hashtag"
   | "Home"
   | "Info"
   | "LayoutSidebarLeft"
