@@ -49,6 +49,7 @@ export type IconName =
   | "FileZip"
   | "File"
   | "Files"
+  | "Flag"
   | "Hashtag"
   | "Home"
   | "Info"
