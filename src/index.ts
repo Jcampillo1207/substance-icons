@@ -77,6 +77,7 @@ export { default as Pencil } from './icons/Pencil';
 export { default as Pin } from './icons/Pin';
 export { default as Plus } from './icons/Plus';
 export { default as PlusDashed } from './icons/PlusDashed';
+export { default as Reply } from './icons/Reply';
 export { default as Save } from './icons/Save';
 export { default as Search } from './icons/Search';
 export { default as SearchDashed } from './icons/SearchDashed';
