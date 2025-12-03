@@ -50,6 +50,8 @@ export { default as FileUnlock } from './icons/FileUnlock';
 export { default as FileZip } from './icons/FileZip';
 export { default as Files } from './icons/Files';
 export { default as Flag } from './icons/Flag';
+export { default as FlagLeft } from './icons/FlagLeft';
+export { default as FlagRight } from './icons/FlagRight';
 export { default as Hashtag } from './icons/Hashtag';
 export { default as Home } from './icons/Home';
 export { default as Info } from './icons/Info';
