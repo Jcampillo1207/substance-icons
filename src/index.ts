@@ -42,6 +42,7 @@ export { default as Dashboard2 } from './icons/Dashboard2';
 export { default as Dashboard3 } from './icons/Dashboard3';
 export { default as Dashboard4 } from './icons/Dashboard4';
 export { default as Dashboard5 } from './icons/Dashboard5';
+export { default as Download } from './icons/Download';
 export { default as ExternalLink } from './icons/ExternalLink';
 export { default as File } from './icons/File';
 export { default as FileCog } from './icons/FileCog';
