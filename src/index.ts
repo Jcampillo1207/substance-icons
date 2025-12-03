@@ -104,6 +104,7 @@ export { default as UserCog } from './icons/UserCog';
 export { default as UserMinus } from './icons/UserMinus';
 export { default as UserPlus } from './icons/UserPlus';
 export { default as Users } from './icons/Users';
+export { default as Workflows } from './icons/Workflows';
 export { default as X } from './icons/X';
 export { default as XDashed } from './icons/XDashed';
 export { IconName } from './icons/types';

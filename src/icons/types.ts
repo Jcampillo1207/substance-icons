@@ -104,6 +104,7 @@ export type IconName =
   | "UserPlus"
   | "User"
   | "Users"
+  | "Workflows"
   | "XDashed"
   | "X"
 ;
