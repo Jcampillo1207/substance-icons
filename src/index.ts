@@ -99,6 +99,7 @@ export { default as TicketSub } from './icons/TicketSub';
 export { default as Tickets } from './icons/Tickets';
 export { default as Trash } from './icons/Trash';
 export { default as Trash2 } from './icons/Trash2';
+export { default as Upload } from './icons/Upload';
 export { default as User } from './icons/User';
 export { default as UserCog } from './icons/UserCog';
 export { default as UserMinus } from './icons/UserMinus';
