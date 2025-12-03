@@ -78,6 +78,7 @@ export type IconName =
   | "PanelRightClose"
   | "PanelRightOpen"
   | "PanelRight"
+  | "PaperClip"
   | "Pen"
   | "Pencil"
   | "Pin"

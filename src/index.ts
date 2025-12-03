@@ -77,6 +77,7 @@ export { default as PanelLeftOpen } from './icons/PanelLeftOpen';
 export { default as PanelRight } from './icons/PanelRight';
 export { default as PanelRightClose } from './icons/PanelRightClose';
 export { default as PanelRightOpen } from './icons/PanelRightOpen';
+export { default as PaperClip } from './icons/PaperClip';
 export { default as Pen } from './icons/Pen';
 export { default as Pencil } from './icons/Pencil';
 export { default as Pin } from './icons/Pin';
