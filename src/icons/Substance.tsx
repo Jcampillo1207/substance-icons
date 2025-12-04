@@ -21,6 +21,7 @@ import BigChevronUpDashed from './BigChevronUpDashed';
 import BookLetter from './BookLetter';
 import Building from './Building';
 import Buildings from './Buildings';
+import Calendar from './Calendar';
 import Check from './Check';
 import ChevronDown from './ChevronDown';
 import ChevronDownDashed from './ChevronDownDashed';
@@ -55,6 +56,7 @@ import FileLock from './FileLock';
 import FileUnlock from './FileUnlock';
 import FileZip from './FileZip';
 import Files from './Files';
+import Filter from './Filter';
 import Flag from './Flag';
 import FlagLeft from './FlagLeft';
 import FlagRight from './FlagRight';
@@ -101,6 +103,7 @@ import SlidersHorizontal from './SlidersHorizontal';
 import Smartphone from './Smartphone';
 import Sun from './Sun';
 import SwatchBook from './SwatchBook';
+import Tag from './Tag';
 import Ticket from './Ticket';
 import TicketBlocked from './TicketBlocked';
 import TicketCheck from './TicketCheck';
@@ -151,7 +154,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { AlertCircle, AlertTriangle, ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Building, Buildings, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, ChevronsLeftRight, ChevronsUpDown, Circle, CircleCheck, CircleDot, CircleDotDashed, CircleX, ContactRound, Copy, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Download, ExternalLink, Eye, EyeOff, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Flag, FlagLeft, FlagRight, Hashtag, Home, Info, Key, LayoutSidebarLeft, LayoutSidebarRight, ListTree, Loader, Loader2, Lock, LockOpen, LogIn, LogOut, Mail, Map, Menu, Monitor, Moon, MoreHorizontal, MoreVertical, OctagonMinus, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, PaperClip, Pen, Pencil, Pin, Plus, PlusDashed, Reply, Save, Search, SearchDashed, Send, Settings, SlidersHorizontal, Smartphone, Sun, SwatchBook, Ticket, TicketBlocked, TicketCheck, TicketFlag, TicketMinus, TicketPlus, TicketSub, Tickets, Trash, Trash2, Upload, User, UserCog, UserMinus, UserPlus, Users, Workflows, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { AlertCircle, AlertTriangle, ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Building, Buildings, Calendar, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, ChevronsLeftRight, ChevronsUpDown, Circle, CircleCheck, CircleDot, CircleDotDashed, CircleX, ContactRound, Copy, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Download, ExternalLink, Eye, EyeOff, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Filter, Flag, FlagLeft, FlagRight, Hashtag, Home, Info, Key, LayoutSidebarLeft, LayoutSidebarRight, ListTree, Loader, Loader2, Lock, LockOpen, LogIn, LogOut, Mail, Map, Menu, Monitor, Moon, MoreHorizontal, MoreVertical, OctagonMinus, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, PaperClip, Pen, Pencil, Pin, Plus, PlusDashed, Reply, Save, Search, SearchDashed, Send, Settings, SlidersHorizontal, Smartphone, Sun, SwatchBook, Tag, Ticket, TicketBlocked, TicketCheck, TicketFlag, TicketMinus, TicketPlus, TicketSub, Tickets, Trash, Trash2, Upload, User, UserCog, UserMinus, UserPlus, Users, Workflows, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
