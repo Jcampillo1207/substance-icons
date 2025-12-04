@@ -64,6 +64,7 @@ export type IconName =
   | "Key"
   | "LayoutSidebarLeft"
   | "LayoutSidebarRight"
+  | "ListTree"
   | "Loader2"
   | "Loader"
   | "LockOpen"
