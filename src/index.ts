@@ -96,6 +96,7 @@ export { default as Search } from './icons/Search';
 export { default as SearchDashed } from './icons/SearchDashed';
 export { default as Send } from './icons/Send';
 export { default as Settings } from './icons/Settings';
+export { default as SlidersHorizontal } from './icons/SlidersHorizontal';
 export { default as Smartphone } from './icons/Smartphone';
 export { default as Substance } from './icons/Substance';
 export { default as Sun } from './icons/Sun';

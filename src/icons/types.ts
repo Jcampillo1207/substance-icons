@@ -97,6 +97,7 @@ export type IconName =
   | "Search"
   | "Send"
   | "Settings"
+  | "SlidersHorizontal"
   | "Smartphone"
   | "Sun"
   | "SwatchBook"
