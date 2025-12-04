@@ -38,6 +38,7 @@ export type IconName =
   | "CircleDot"
   | "CircleX"
   | "Circle"
+  | "Clock"
   | "ContactRound"
   | "Copy"
   | "Dashboard2"

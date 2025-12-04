@@ -37,6 +37,7 @@ export { default as CircleCheck } from './icons/CircleCheck';
 export { default as CircleDot } from './icons/CircleDot';
 export { default as CircleDotDashed } from './icons/CircleDotDashed';
 export { default as CircleX } from './icons/CircleX';
+export { default as Clock } from './icons/Clock';
 export { default as ContactRound } from './icons/ContactRound';
 export { default as Copy } from './icons/Copy';
 export { default as Dashboard } from './icons/Dashboard';

@@ -38,6 +38,7 @@ import CircleCheck from './CircleCheck';
 import CircleDot from './CircleDot';
 import CircleDotDashed from './CircleDotDashed';
 import CircleX from './CircleX';
+import Clock from './Clock';
 import ContactRound from './ContactRound';
 import Copy from './Copy';
 import Dashboard from './Dashboard';
@@ -154,7 +155,7 @@ const Substance: React.FC<IconProps> = ({
   className = "",
   ...props
 }) => {
-  const icons: Record<string, React.ComponentType<any>> = { AlertCircle, AlertTriangle, ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Building, Buildings, Calendar, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, ChevronsLeftRight, ChevronsUpDown, Circle, CircleCheck, CircleDot, CircleDotDashed, CircleX, ContactRound, Copy, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Download, ExternalLink, Eye, EyeOff, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Filter, Flag, FlagLeft, FlagRight, Hashtag, Home, Info, Key, LayoutSidebarLeft, LayoutSidebarRight, ListTree, Loader, Loader2, Lock, LockOpen, LogIn, LogOut, Mail, Map, Menu, Monitor, Moon, MoreHorizontal, MoreVertical, OctagonMinus, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, PaperClip, Pen, Pencil, Pin, Plus, PlusDashed, Reply, Save, Search, SearchDashed, Send, Settings, SlidersHorizontal, Smartphone, Sun, SwatchBook, Tag, Ticket, TicketBlocked, TicketCheck, TicketFlag, TicketMinus, TicketPlus, TicketSub, Tickets, Trash, Trash2, Upload, User, UserCog, UserMinus, UserPlus, Users, Workflows, X, XDashed };
+  const icons: Record<string, React.ComponentType<any>> = { AlertCircle, AlertTriangle, ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Building, Buildings, Calendar, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, ChevronsLeftRight, ChevronsUpDown, Circle, CircleCheck, CircleDot, CircleDotDashed, CircleX, Clock, ContactRound, Copy, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Download, ExternalLink, Eye, EyeOff, File, FileCog, FileEdit, FileLock, FileUnlock, FileZip, Files, Filter, Flag, FlagLeft, FlagRight, Hashtag, Home, Info, Key, LayoutSidebarLeft, LayoutSidebarRight, ListTree, Loader, Loader2, Lock, LockOpen, LogIn, LogOut, Mail, Map, Menu, Monitor, Moon, MoreHorizontal, MoreVertical, OctagonMinus, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, PaperClip, Pen, Pencil, Pin, Plus, PlusDashed, Reply, Save, Search, SearchDashed, Send, Settings, SlidersHorizontal, Smartphone, Sun, SwatchBook, Tag, Ticket, TicketBlocked, TicketCheck, TicketFlag, TicketMinus, TicketPlus, TicketSub, Tickets, Trash, Trash2, Upload, User, UserCog, UserMinus, UserPlus, Users, Workflows, X, XDashed };
   const IconComponent = icons[name];
 
   if (!IconComponent) {
