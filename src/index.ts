@@ -45,6 +45,8 @@ export { default as Dashboard4 } from './icons/Dashboard4';
 export { default as Dashboard5 } from './icons/Dashboard5';
 export { default as Download } from './icons/Download';
 export { default as ExternalLink } from './icons/ExternalLink';
+export { default as Eye } from './icons/Eye';
+export { default as EyeOff } from './icons/EyeOff';
 export { default as File } from './icons/File';
 export { default as FileCog } from './icons/FileCog';
 export { default as FileEdit } from './icons/FileEdit';

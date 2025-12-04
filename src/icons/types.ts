@@ -46,6 +46,8 @@ export type IconName =
   | "Dashboard"
   | "Download"
   | "ExternalLink"
+  | "EyeOff"
+  | "Eye"
   | "FileCog"
   | "FileEdit"
   | "FileLock"
