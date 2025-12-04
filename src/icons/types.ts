@@ -98,6 +98,7 @@ export type IconName =
   | "Settings"
   | "Smartphone"
   | "Sun"
+  | "SwatchBook"
   | "TicketBlocked"
   | "TicketCheck"
   | "TicketFlag"

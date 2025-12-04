@@ -98,6 +98,7 @@ export { default as Settings } from './icons/Settings';
 export { default as Smartphone } from './icons/Smartphone';
 export { default as Substance } from './icons/Substance';
 export { default as Sun } from './icons/Sun';
+export { default as SwatchBook } from './icons/SwatchBook';
 export { default as Ticket } from './icons/Ticket';
 export { default as TicketBlocked } from './icons/TicketBlocked';
 export { default as TicketCheck } from './icons/TicketCheck';
