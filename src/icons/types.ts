@@ -19,6 +19,7 @@ export type IconName =
   | "BigChevronUpDashed"
   | "BigChevronUp"
   | "BookLetter"
+  | "Bookmark"
   | "Building"
   | "Buildings"
   | "Calendar"
