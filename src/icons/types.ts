@@ -90,6 +90,7 @@ export type IconName =
   | "SearchDashed"
   | "Search"
   | "Settings"
+  | "Smartphone"
   | "Sun"
   | "TicketBlocked"
   | "TicketCheck"

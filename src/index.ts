@@ -89,6 +89,7 @@ export { default as Save } from './icons/Save';
 export { default as Search } from './icons/Search';
 export { default as SearchDashed } from './icons/SearchDashed';
 export { default as Settings } from './icons/Settings';
+export { default as Smartphone } from './icons/Smartphone';
 export { default as Substance } from './icons/Substance';
 export { default as Sun } from './icons/Sun';
 export { default as Ticket } from './icons/Ticket';
