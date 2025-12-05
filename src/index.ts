@@ -67,6 +67,7 @@ export { default as Info } from './icons/Info';
 export { default as Key } from './icons/Key';
 export { default as LayoutSidebarLeft } from './icons/LayoutSidebarLeft';
 export { default as LayoutSidebarRight } from './icons/LayoutSidebarRight';
+export { default as List } from './icons/List';
 export { default as ListTree } from './icons/ListTree';
 export { default as Loader } from './icons/Loader';
 export { default as Loader2 } from './icons/Loader2';
