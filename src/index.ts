@@ -22,6 +22,7 @@ export { default as Bookmark } from './icons/Bookmark';
 export { default as Building } from './icons/Building';
 export { default as Buildings } from './icons/Buildings';
 export { default as Calendar } from './icons/Calendar';
+export { default as ChartPie } from './icons/ChartPie';
 export { default as Check } from './icons/Check';
 export { default as ChevronDown } from './icons/ChevronDown';
 export { default as ChevronDownDashed } from './icons/ChevronDownDashed';

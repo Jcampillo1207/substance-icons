@@ -23,6 +23,7 @@ export type IconName =
   | "Building"
   | "Buildings"
   | "Calendar"
+  | "ChartPie"
   | "Check"
   | "ChevronDownDashed"
   | "ChevronDown"
