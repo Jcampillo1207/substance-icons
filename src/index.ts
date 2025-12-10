@@ -19,6 +19,7 @@ export { default as BigChevronUp } from './icons/BigChevronUp';
 export { default as BigChevronUpDashed } from './icons/BigChevronUpDashed';
 export { default as BookLetter } from './icons/BookLetter';
 export { default as Bookmark } from './icons/Bookmark';
+export { default as Bot } from './icons/Bot';
 export { default as Building } from './icons/Building';
 export { default as Buildings } from './icons/Buildings';
 export { default as Calendar } from './icons/Calendar';
