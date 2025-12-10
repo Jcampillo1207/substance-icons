@@ -93,6 +93,7 @@ export { default as PanelRightClose } from './icons/PanelRightClose';
 export { default as PanelRightOpen } from './icons/PanelRightOpen';
 export { default as PaperClip } from './icons/PaperClip';
 export { default as Pen } from './icons/Pen';
+export { default as PenSquare } from './icons/PenSquare';
 export { default as Pencil } from './icons/Pencil';
 export { default as Pin } from './icons/Pin';
 export { default as Plus } from './icons/Plus';
