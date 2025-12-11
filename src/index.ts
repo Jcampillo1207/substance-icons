@@ -112,6 +112,7 @@ export { default as SignalMedium } from './icons/SignalMedium';
 export { default as SlidersHorizontal } from './icons/SlidersHorizontal';
 export { default as Smartphone } from './icons/Smartphone';
 export { default as Star } from './icons/Star';
+export { default as StarHalf } from './icons/StarHalf';
 export { default as Substance } from './icons/Substance';
 export { default as Sun } from './icons/Sun';
 export { default as SwatchBook } from './icons/SwatchBook';
