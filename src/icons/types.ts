@@ -112,6 +112,7 @@ export type IconName =
   | "Signal"
   | "SlidersHorizontal"
   | "Smartphone"
+  | "Star"
   | "Sun"
   | "SwatchBook"
   | "Tag"
