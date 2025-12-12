@@ -53,6 +53,7 @@ export { default as ExternalLink } from './icons/ExternalLink';
 export { default as Eye } from './icons/Eye';
 export { default as EyeOff } from './icons/EyeOff';
 export { default as File } from './icons/File';
+export { default as FileChartColumn } from './icons/FileChartColumn';
 export { default as FileCog } from './icons/FileCog';
 export { default as FileEdit } from './icons/FileEdit';
 export { default as FileLock } from './icons/FileLock';

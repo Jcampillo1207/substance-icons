@@ -53,6 +53,7 @@ export type IconName =
   | "ExternalLink"
   | "EyeOff"
   | "Eye"
+  | "FileChartColumn"
   | "FileCog"
   | "FileEdit"
   | "FileLock"
