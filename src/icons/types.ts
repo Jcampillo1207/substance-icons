@@ -57,6 +57,7 @@ export type IconName =
   | "FileCog"
   | "FileEdit"
   | "FileLock"
+  | "FileSpreadsheet"
   | "FileUnlock"
   | "FileZip"
   | "File"

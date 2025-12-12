@@ -57,6 +57,7 @@ export { default as FileChartColumn } from './icons/FileChartColumn';
 export { default as FileCog } from './icons/FileCog';
 export { default as FileEdit } from './icons/FileEdit';
 export { default as FileLock } from './icons/FileLock';
+export { default as FileSpreadsheet } from './icons/FileSpreadsheet';
 export { default as FileUnlock } from './icons/FileUnlock';
 export { default as FileZip } from './icons/FileZip';
 export { default as Files } from './icons/Files';
