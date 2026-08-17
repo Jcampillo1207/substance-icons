@@ -49,7 +49,8 @@ const gitStatus = () => {
  * `:/` anchors a pathspec to the repository root — the lockfile lives there in the
  * workspace, while this script runs from packages/icons.
  */
-const RELEASE_PATHS = ["src", "svg", "package.json", ":/package-lock.json"];
+const LOCKFILE = ":/package-lock.json";
+const RELEASE_PATHS = ["src", "svg", "package.json", LOCKFILE];
 
 const isTracked = (p) => execSilent(`git ls-files --error-unmatch ${p}`) !== null;
 
@@ -116,23 +117,31 @@ const release = async ({ mode }) => {
     }
 
     console.log("📈 Incrementing version...");
-    exec("npm version patch");
+    // npm disables its git integration inside a workspace: `npm version patch` bumps
+    // package.json and stops there, no commit and no tag. Relying on it here produced a
+    // release that reported success while pushing nothing to tag. Do both steps by hand.
+    exec("npm version patch --no-git-tag-version");
     const newVersion = getVersion();
+    const tag = `v${newVersion}`;
+
+    exec(`git add package.json ${LOCKFILE}`);
+    exec(`git commit -m "${newVersion}"`);
+    exec(`git tag -a ${tag} -m "${tag}"`);
     console.log(`✅ New version: ${newVersion}\n`);
 
-    // `npm version` makes exactly one commit whose message is the bare version string.
+    // The commit above is the only one whose subject is the bare version string.
     // Verifying that before any reset means a surprise HEAD is never discarded.
     const rollback = (reason) => {
-      console.error(`\n❌ ${reason} — rolling back v${newVersion}`);
+      console.error(`\n❌ ${reason} — rolling back ${tag}`);
       const head = execSilent("git log -1 --pretty=%s");
       if (head === newVersion) {
-        exec(`git tag -d v${newVersion}`);
+        exec(`git tag -d ${tag}`);
         exec("git reset --hard HEAD~1");
         console.error(`↩️  Rolled back to ${getVersion()}`);
       } else {
         console.error(
           `⚠️  HEAD is "${head}", not "${newVersion}" — leaving the repo alone.\n` +
-            `   Undo manually: git tag -d v${newVersion} && git reset --hard HEAD~1`
+            `   Undo manually: git tag -d ${tag} && git reset --hard HEAD~1`
         );
       }
     };
@@ -145,10 +154,18 @@ const release = async ({ mode }) => {
         rollback("Push failed");
         throw error;
       }
+
+      // The whole release hinges on the tag reaching the remote, since that is what
+      // triggers the Release workflow. Confirm it rather than trusting the push output.
+      if (!execSilent(`git ls-remote --tags origin refs/tags/${tag}`)) {
+        rollback(`Push reported success but ${tag} is not on the remote`);
+        throw new Error(`${tag} did not reach origin`);
+      }
+
       console.log("");
-      console.log("✅ Tag pushed.");
+      console.log(`✅ ${tag} pushed and confirmed on origin.`);
       console.log(
-        `🎉 v${newVersion} is now building in CI; Release publishes it to npm with provenance.`
+        `🎉 Release is publishing ${newVersion} to npm with provenance.`
       );
       console.log("   https://github.com/Jcampillo1207/substance-icons/actions");
     } else {
