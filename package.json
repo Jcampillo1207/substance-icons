@@ -14,7 +14,7 @@
     "generate-icons": "turbo generate-icons"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.9"
   },
   "devDependencies": {
     "turbo": "^2.5.8"
@@ -25,5 +25,9 @@
       "version": "^10",
       "onFail": "warn"
     }
+  },
+  "overrides": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3"
   }
 }

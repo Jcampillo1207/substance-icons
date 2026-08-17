@@ -11,13 +11,15 @@ concurrency:
 
 jobs:
   verify:
+    # Next 16 declares engines.node >=20.9.0, so the whole graph has that floor even
+    # though the icon library itself runs happily on 18. The library's own floor is
+    # covered separately by the icons-node18 job below.
     name: verify (node ${{ matrix.node }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        # Covers the floor declared in engines.node through current.
-        node: [18, 20, 22, 24]
+        node: [20, 22, 24]
     steps:
       - uses: actions/checkout@v4
 
@@ -30,6 +32,24 @@ jobs:
 
       - name: Build, typecheck and test
         run: npx turbo build typecheck test
+
+  icons-node18:
+    # packages/icons publishes engines.node >=18. Keep that claim honest by actually
+    # exercising it, filtered so the Next app (which cannot run on 18) stays out.
+    name: icons on node 18
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build, typecheck and test the library only
+        run: npx turbo build typecheck test --filter=@intello/substance-icons
 
   icons-in-sync:
     # The components under src/icons are generated from svg/. Editing one by hand looks
