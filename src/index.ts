@@ -139,4 +139,4 @@ export { default as Users } from './icons/Users';
 export { default as Workflows } from './icons/Workflows';
 export { default as X } from './icons/X';
 export { default as XDashed } from './icons/XDashed';
-export { IconName } from './icons/types';
+export type { IconName } from './icons/types';

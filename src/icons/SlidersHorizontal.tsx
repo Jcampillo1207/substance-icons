@@ -1,7 +1,7 @@
 import React from 'react';
 
-interface SlidersHorizontalProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
+export interface SlidersHorizontalProps extends React.SVGProps<SVGSVGElement> {
+  size?: number | string;
   color?: string;
   className?: string;
 }
@@ -12,7 +12,7 @@ interface SlidersHorizontalProps extends React.SVGProps<SVGSVGElement> {
  * @description Automatically generated SVG icon component for SlidersHorizontal.
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMCA1SDNtOSAxNEgzTTE0IDN2NG0yIDEwdjRtNS05aC05bTkgN2gtNW01LTE0aC03bS02IDV2NG0wLTJIMyIvPjwvc3ZnPg==)
  * @param {object} props - SVG component props, including any valid SVG attribute.
- * @param {number} [props.size=24] - Icon size.
+ * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
@@ -21,17 +21,28 @@ interface SlidersHorizontalProps extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-const SlidersHorizontal: React.FC<SlidersHorizontalProps> = ({
+const SlidersHorizontal = /*#__PURE__*/ Object.assign(
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, SlidersHorizontalProps>(({
   size = 24,
   color = "currentColor",
-  className = "",
+  className,
   style,
   ...props
-}) => (
-  <svg
-    className={`${className}`}
+}, ref) => (
+    <svg
+    ref={ref}
+    className={className}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-width="2" d="M10 5H3m9 14H3M14 3v4m2 10v4m5-9h-9m9 7h-5m5-14h-7m-6 5v4m0-2H3"/></svg>
+    height={size}
+    style={style}
+    fill="none" viewBox="0 0 24 24"
+    {...props}
+  ><path stroke={color || "currentColor"} strokeLinecap="square" strokeWidth="2" d="M10 5H3m9 14H3M14 3v4m2 10v4m5-9h-9m9 7h-5m5-14h-7m-6 5v4m0-2H3"/></svg>
+  )),
+  // displayName goes inside a pure expression, not a separate assignment statement.
+  // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
+  // single-file bundle that one statement pins every icon into every consumer build.
+  { displayName: "SlidersHorizontal" }
 );
 
 export default SlidersHorizontal;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-interface SendProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
+export interface SendProps extends React.SVGProps<SVGSVGElement> {
+  size?: number | string;
   color?: string;
   className?: string;
 }
@@ -10,9 +10,9 @@ interface SendProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name Send
  * @description Automatically generated SVG icon component for Send.
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTIxIDMgMTAuOTE0IDEzLjA4NU0yMSAzIDIgOC45ODdsOC45MTQgNC4wOThNMjEgM2wtNS45ODcgMTktNC4xLTguOTE1Ii8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0iYSI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgyNHYyNEgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTIxIDMgMTAuOTE0IDEzLjA4NW0wIDBMMTUuMDEzIDIyIDIxIDMgMiA4Ljk4N3oiLz48L2c+PGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDI0djI0SDB6Ii8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+)
  * @param {object} props - SVG component props, including any valid SVG attribute.
- * @param {number} [props.size=24] - Icon size.
+ * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
@@ -21,17 +21,28 @@ interface SendProps extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-const Send: React.FC<SendProps> = ({
+const Send = /*#__PURE__*/ Object.assign(
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, SendProps>(({
   size = 24,
   color = "currentColor",
-  className = "",
+  className,
   style,
   ...props
-}) => (
-  <svg
-    className={`${className}`}
+}, ref) => (
+    <svg
+    ref={ref}
+    className={className}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><g clip-path="url(#a)"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-width="2" d="M21 3 10.914 13.085M21 3 2 8.987l8.914 4.098M21 3l-5.987 19-4.1-8.915"/></g><defs><clipPath id="a"><path fill={color || "currentColor"} d="M0 0h24v24H0z"/></clipPath></defs></svg>
+    height={size}
+    style={style}
+    fill="none" viewBox="0 0 24 24"
+    {...props}
+  ><g clipPath="url(#a)"><path stroke={color || "currentColor"} strokeLinecap="square" strokeWidth="2" d="M21 3 10.914 13.085m0 0L15.013 22 21 3 2 8.987z"/></g><defs><clipPath id="a"><path fill={color || "currentColor"} d="M0 0h24v24H0z"/></clipPath></defs></svg>
+  )),
+  // displayName goes inside a pure expression, not a separate assignment statement.
+  // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
+  // single-file bundle that one statement pins every icon into every consumer build.
+  { displayName: "Send" }
 );
 
 export default Send;

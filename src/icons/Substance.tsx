@@ -139,11 +139,11 @@ import Users from './Users';
 import Workflows from './Workflows';
 import X from './X';
 import XDashed from './XDashed';
-import { IconName } from './types';
+import type { IconName } from './types';
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {
+export interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: IconName;
-  size?: number;
+  size?: number | string;
   color?: string;
   className?: string;
 }
@@ -163,13 +163,14 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element | null} JSX element representing the SVG icon.
  */
 
-const Substance: React.FC<IconProps> = ({
+const Substance = /*#__PURE__*/ Object.assign(
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, IconProps>(({
   name,
   size = 24,
   color = "currentColor",
-  className = "",
+  className,
   ...props
-}) => {
+}, ref) => {
   const icons: Record<string, React.ComponentType<any>> = { AlertCircle, AlertTriangle, ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight, Ban, BigChevronDown, BigChevronDownDashed, BigChevronLeft, BigChevronLeftDashed, BigChevronRight, BigChevronRightDashed, BigChevronUp, BigChevronUpDashed, BookLetter, Bookmark, Bot, Building, Buildings, Calendar, ChartPie, Check, ChevronDown, ChevronDownDashed, ChevronLeft, ChevronLeftDashed, ChevronRight, ChevronRightDashed, ChevronUp, ChevronUpDashed, ChevronsLeftRight, ChevronsUpDown, Circle, CircleCheck, CircleDot, CircleDotDashed, CircleX, Clock, ContactRound, Copy, Dashboard, Dashboard2, Dashboard3, Dashboard4, Dashboard5, Download, ExternalLink, Eye, EyeOff, File, FileChartColumn, FileCog, FileEdit, FileLock, FileSpreadsheet, FileUnlock, FileZip, Files, Filter, Flag, FlagLeft, FlagRight, Hashtag, Home, Info, Key, LayoutSidebarLeft, LayoutSidebarRight, List, ListTree, Loader, Loader2, Lock, LockOpen, LogIn, LogOut, Mail, Map, Menu, Monitor, Moon, MoreHorizontal, MoreVertical, OcatagonAlert, OctagonMinus, PanelLeft, PanelLeftClose, PanelLeftOpen, PanelRight, PanelRightClose, PanelRightOpen, PaperClip, Pen, PenSquare, Pencil, Pin, Plus, PlusDashed, Reply, Save, Search, SearchDashed, Send, Settings, Signal, SignalHigh, SignalLow, SignalMedium, SlidersHorizontal, Smartphone, Star, StarHalf, Sun, SwatchBook, Tag, Ticket, TicketBlocked, TicketCheck, TicketFlag, TicketMinus, TicketPlus, TicketSub, Tickets, Trash, Trash2, Trophy, Upload, User, UserCog, UserMinus, UserPlus, Users, Workflows, X, XDashed };
   const IconComponent = icons[name];
 
@@ -180,12 +181,15 @@ const Substance: React.FC<IconProps> = ({
 
   return (
     <IconComponent
+      ref={ref}
       size={size}
       color={color}
       className={className}
       {...props}
     />
   );
-};
+  }),
+  { displayName: "Substance" }
+);
 
 export default Substance;

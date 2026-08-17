@@ -1,7 +1,7 @@
 import React from 'react';
 
-interface LogInProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
+export interface LogInProps extends React.SVGProps<SVGSVGElement> {
+  size?: number | string;
   color?: string;
   className?: string;
 }
@@ -10,9 +10,9 @@ interface LogInProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name LogIn
  * @description Automatically generated SVG icon component for LogIn.
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xNSAyMWg2VjNoLTZtLTUgMTQgNS01bTAgMC01LTVtNSA1SDMiLz48L3N2Zz4=)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xNSAyMWg2VjNoLTZtLTUgNCA1IDUtNSA1bTUtNUgzIi8+PC9zdmc+)
  * @param {object} props - SVG component props, including any valid SVG attribute.
- * @param {number} [props.size=24] - Icon size.
+ * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
@@ -21,17 +21,28 @@ interface LogInProps extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-const LogIn: React.FC<LogInProps> = ({
+const LogIn = /*#__PURE__*/ Object.assign(
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, LogInProps>(({
   size = 24,
   color = "currentColor",
-  className = "",
+  className,
   style,
   ...props
-}) => (
-  <svg
-    className={`${className}`}
+}, ref) => (
+    <svg
+    ref={ref}
+    className={className}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-width="2" d="M15 21h6V3h-6m-5 14 5-5m0 0-5-5m5 5H3"/></svg>
+    height={size}
+    style={style}
+    fill="none" viewBox="0 0 24 24"
+    {...props}
+  ><path stroke={color || "currentColor"} strokeLinecap="square" strokeWidth="2" d="M15 21h6V3h-6m-5 4 5 5-5 5m5-5H3"/></svg>
+  )),
+  // displayName goes inside a pure expression, not a separate assignment statement.
+  // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
+  // single-file bundle that one statement pins every icon into every consumer build.
+  { displayName: "LogIn" }
 );
 
 export default LogIn;

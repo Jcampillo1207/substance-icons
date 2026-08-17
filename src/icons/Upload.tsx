@@ -1,7 +1,7 @@
 import React from 'react';
 
-interface UploadProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
+export interface UploadProps extends React.SVGProps<SVGSVGElement> {
+  size?: number | string;
   color?: string;
   className?: string;
 }
@@ -10,9 +10,9 @@ interface UploadProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name Upload
  * @description Automatically generated SVG icon component for Upload.
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMiAzdjEybTAtMTIgNSA1bS01LTVMNyA4bTE0IDd2Nkgzdi02Ii8+PC9zdmc+)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMiAzdjEyTTcgOGw1LTUgNSA1bTQgN3Y2SDN2LTYiLz48L3N2Zz4=)
  * @param {object} props - SVG component props, including any valid SVG attribute.
- * @param {number} [props.size=24] - Icon size.
+ * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
@@ -21,17 +21,28 @@ interface UploadProps extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-const Upload: React.FC<UploadProps> = ({
+const Upload = /*#__PURE__*/ Object.assign(
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, UploadProps>(({
   size = 24,
   color = "currentColor",
-  className = "",
+  className,
   style,
   ...props
-}) => (
-  <svg
-    className={`${className}`}
+}, ref) => (
+    <svg
+    ref={ref}
+    className={className}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-width="2" d="M12 3v12m0-12 5 5m-5-5L7 8m14 7v6H3v-6"/></svg>
+    height={size}
+    style={style}
+    fill="none" viewBox="0 0 24 24"
+    {...props}
+  ><path stroke={color || "currentColor"} strokeLinecap="square" strokeWidth="2" d="M12 3v12M7 8l5-5 5 5m4 7v6H3v-6"/></svg>
+  )),
+  // displayName goes inside a pure expression, not a separate assignment statement.
+  // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
+  // single-file bundle that one statement pins every icon into every consumer build.
+  { displayName: "Upload" }
 );
 
 export default Upload;

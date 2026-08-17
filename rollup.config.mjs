@@ -1,8 +1,7 @@
 // rollup.config.mjs
-import typescript from "rollup-plugin-typescript2";
+import typescript from "@rollup/plugin-typescript";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import terser from "@rollup/plugin-terser";
 
 export default {
   input: "src/index.ts",
@@ -24,22 +23,20 @@ export default {
       extensions: [".ts", ".tsx"],
     }),
     commonjs(),
+    // Declarations are emitted separately by `npm run build:types` (tsc), so this only
+    // transpiles. Emitting them here too makes the plugin write the same .d.ts once per
+    // output entry, and the two writes race.
     typescript({
       tsconfig: "./tsconfig.json",
-      useTsconfigDeclarationDir: true,
-      clean: true,
+      declaration: false,
+      declarationMap: false,
+      declarationDir: undefined,
     }),
-    terser({
-      compress: {
-        pure_getters: true,
-        unsafe: true,
-        unsafe_comps: true,
-        warnings: false,
-      },
-      format: {
-        comments: false,
-      },
-    }),
+    // No terser here on purpose. Each icon is a forwardRef() call at module scope, which a
+    // consumer's bundler can only drop when the /*#__PURE__*/ annotation survives — and
+    // terser consumes those annotations without re-emitting them, under every `comments`
+    // setting. Minifying here would ship all 140 icons into every consumer bundle to save
+    // bytes nobody downloads. Consumers minify their own build; that is where it belongs.
   ],
   external: ["react", "react-dom"],
   treeshake: {

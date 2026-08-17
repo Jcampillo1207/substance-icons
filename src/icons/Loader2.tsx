@@ -1,7 +1,7 @@
 import React from 'react';
 
-interface Loader2Props extends React.SVGProps<SVGSVGElement> {
-  size?: number;
+export interface Loader2Props extends React.SVGProps<SVGSVGElement> {
+  size?: number | string;
   color?: string;
   className?: string;
 }
@@ -12,7 +12,7 @@ interface Loader2Props extends React.SVGProps<SVGSVGElement> {
  * @description Automatically generated SVG icon component for Loader2.
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0yMSAxMmE5IDkgMCAxIDEtNi4yMTktOC41NiIvPjwvc3ZnPg==)
  * @param {object} props - SVG component props, including any valid SVG attribute.
- * @param {number} [props.size=24] - Icon size.
+ * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
@@ -21,17 +21,28 @@ interface Loader2Props extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-const Loader2: React.FC<Loader2Props> = ({
+const Loader2 = /*#__PURE__*/ Object.assign(
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, Loader2Props>(({
   size = 24,
   color = "currentColor",
-  className = "",
+  className,
   style,
   ...props
-}) => (
-  <svg
-    className={`${className}`}
+}, ref) => (
+    <svg
+    ref={ref}
+    className={className}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+    height={size}
+    style={style}
+    fill="none" viewBox="0 0 24 24"
+    {...props}
+  ><path stroke={color || "currentColor"} strokeLinecap="square" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+  )),
+  // displayName goes inside a pure expression, not a separate assignment statement.
+  // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
+  // single-file bundle that one statement pins every icon into every consumer build.
+  { displayName: "Loader2" }
 );
 
 export default Loader2;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-interface PenProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
+export interface PenProps extends React.SVGProps<SVGSVGElement> {
+  size?: number | string;
   color?: string;
   className?: string;
 }
@@ -12,7 +12,7 @@ interface PenProps extends React.SVGProps<SVGSVGElement> {
  * @description Automatically generated SVG icon component for Pen.
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTIyIDQuODE5YzAgLjc0Ny0uMjk3IDEuNDY0LS44MjYgMS45OTNMNy44MjcgMjAuMTYxIDIgMjJsMS44NDItNS44MjZMMTcuMTg4IDIuODI1QTIuODE5IDIuODE5IDAgMCAxIDIyIDQuODE5Ii8+PC9zdmc+)
  * @param {object} props - SVG component props, including any valid SVG attribute.
- * @param {number} [props.size=24] - Icon size.
+ * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
@@ -21,17 +21,28 @@ interface PenProps extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-const Pen: React.FC<PenProps> = ({
+const Pen = /*#__PURE__*/ Object.assign(
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, PenProps>(({
   size = 24,
   color = "currentColor",
-  className = "",
+  className,
   style,
   ...props
-}) => (
-  <svg
-    className={`${className}`}
+}, ref) => (
+    <svg
+    ref={ref}
+    className={className}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 4.819c0 .747-.297 1.464-.826 1.993L7.827 20.161 2 22l1.842-5.826L17.188 2.825A2.819 2.819 0 0 1 22 4.819"/></svg>
+    height={size}
+    style={style}
+    fill="none" viewBox="0 0 24 24"
+    {...props}
+  ><path stroke={color || "currentColor"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M22 4.819c0 .747-.297 1.464-.826 1.993L7.827 20.161 2 22l1.842-5.826L17.188 2.825A2.819 2.819 0 0 1 22 4.819"/></svg>
+  )),
+  // displayName goes inside a pure expression, not a separate assignment statement.
+  // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
+  // single-file bundle that one statement pins every icon into every consumer build.
+  { displayName: "Pen" }
 );
 
 export default Pen;

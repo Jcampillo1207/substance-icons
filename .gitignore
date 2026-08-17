@@ -8,10 +8,6 @@ yarn-error.log
 build/
 dist/
 
-# SVG source files (but keep the README)
-svg/*
-!svg/README.md
-
 # Misc
 .DS_Store
 .env

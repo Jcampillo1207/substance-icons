@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
+    // Without this, lib defaults to ES5 and Object.assign is unknown to the checker.
+    // React 16.8+ already requires Object.assign at runtime, so the floor is unchanged.
+    "lib": ["ES2015", "DOM"],
     "module": "esnext",
     "jsx": "react",
     "declaration": true,

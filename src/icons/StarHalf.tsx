@@ -1,7 +1,7 @@
 import React from 'react';
 
-interface StarHalfProps extends React.SVGProps<SVGSVGElement> {
-  size?: number;
+export interface StarHalfProps extends React.SVGProps<SVGSVGElement> {
+  size?: number | string;
   color?: string;
   className?: string;
 }
@@ -12,7 +12,7 @@ interface StarHalfProps extends React.SVGProps<SVGSVGElement> {
  * @description Automatically generated SVG icon component for StarHalf.
  * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMiAyIDguNTYgNy43NTFsLTYuNTM2IDEuNSA0LjQxIDUuMDQ1LS41OTggNi42NzRMMTIgMTguMzQiLz48L3N2Zz4=)
  * @param {object} props - SVG component props, including any valid SVG attribute.
- * @param {number} [props.size=24] - Icon size.
+ * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
  * @param {string} [props.className] - Additional CSS class for the icon.
  * @author José Campillo
@@ -21,17 +21,28 @@ interface StarHalfProps extends React.SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} JSX element representing the SVG icon.
  */
 
-const StarHalf: React.FC<StarHalfProps> = ({
+const StarHalf = /*#__PURE__*/ Object.assign(
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, StarHalfProps>(({
   size = 24,
   color = "currentColor",
-  className = "",
+  className,
   style,
   ...props
-}) => (
-  <svg
-    className={`${className}`}
+}, ref) => (
+    <svg
+    ref={ref}
+    className={className}
     width={size}
-    height={size} fill="none" viewBox="0 0 24 24"><path stroke={color || "currentColor"} stroke-linecap="square" stroke-width="2" d="M12 2 8.56 7.751l-6.536 1.5 4.41 5.045-.598 6.674L12 18.34"/></svg>
+    height={size}
+    style={style}
+    fill="none" viewBox="0 0 24 24"
+    {...props}
+  ><path stroke={color || "currentColor"} strokeLinecap="square" strokeWidth="2" d="M12 2 8.56 7.751l-6.536 1.5 4.41 5.045-.598 6.674L12 18.34"/></svg>
+  )),
+  // displayName goes inside a pure expression, not a separate assignment statement.
+  // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
+  // single-file bundle that one statement pins every icon into every consumer build.
+  { displayName: "StarHalf" }
 );
 
 export default StarHalf;

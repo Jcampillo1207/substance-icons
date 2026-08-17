@@ -1,0 +1,8 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="settings">
+<g id="Vector">
+<path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="2"/>
+<path d="M14 2H10L9 5L7 6L4 5L2 9L4 11V13L2 15L4 19L7 18L9 19L10 22H14L15 19L17 18L20 19L22 15L20 13V11L22 9L20 5L17 6L15 5L14 2Z" stroke="black" stroke-width="2"/>
+</g>
+</g>
+</svg>
