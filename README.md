@@ -51,8 +51,9 @@ npm run deploy --workspace @intello/substance-icons
 npm run ship --workspace @intello/substance-icons
 ```
 
-The Release workflow needs an `NPM_TOKEN` secret with publish rights on the
-`@intello` scope.
+The Release workflow authenticates to npm through Trusted Publishing (OIDC), configured
+on npmjs.com against this repository and `release.yml`. There is no publish token to
+store or rotate, and every published tarball carries a provenance attestation.
 
 ## License
 

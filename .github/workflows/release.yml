@@ -6,9 +6,9 @@ on:
 
 permissions:
   contents: read
-  # Required for npm provenance: npm exchanges this OIDC token for an attestation
-  # that ties the published tarball to this workflow run and commit. This is why
-  # publishing from CI is worth the setup — it cannot be produced from a laptop.
+  # Required for npm Trusted Publishing. npm exchanges this OIDC token for the right
+  # to publish — there is no NPM_TOKEN — and mints a provenance attestation tying the
+  # tarball to this workflow run and commit. Neither is reproducible from a laptop.
   id-token: write
 
 jobs:
@@ -23,6 +23,12 @@ jobs:
           node-version: 22
           cache: npm
           registry-url: https://registry.npmjs.org
+
+      # Trusted Publishing needs npm >= 11.5.1; Node 22 still bundles npm 10.
+      - name: Use an npm that speaks OIDC
+        run: |
+          npm install -g npm@latest
+          npm --version
 
       - run: npm ci
 
@@ -42,8 +48,29 @@ jobs:
 
       # prepack re-runs typecheck, build and test here. The duplication is deliberate:
       # it is the last gate before an immutable artifact reaches the registry.
+      # No NODE_AUTH_TOKEN: auth comes from the OIDC token, and provenance is automatic
+      # under Trusted Publishing, so --provenance is not passed explicitly.
       - name: Publish
-        run: npm publish --provenance --access public
+        run: npm publish --access public
         working-directory: packages/icons
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # If the trusted publisher were misconfigured, npm can fall back to publishing
+      # without an attestation. That would succeed quietly, so check rather than assume.
+      - name: Verify provenance was attached
+        working-directory: packages/icons
+        run: |
+          name=$(node -p "require('./package.json').name")
+          version=$(node -p "require('./package.json').version")
+          # The registry can lag a few seconds behind a publish, so retry before
+          # concluding the attestation is genuinely missing.
+          for attempt in 1 2 3 4 5; do
+            attestations=$(npm view "$name@$version" dist.attestations --json 2>/dev/null || true)
+            if [ -n "$attestations" ] && [ "$attestations" != "undefined" ]; then
+              echo "Provenance attached to $name@$version"
+              exit 0
+            fi
+            echo "Attempt $attempt: no attestation yet, waiting..."
+            sleep 10
+          done
+          echo "::error::$name@$version was published without provenance — check the trusted publisher settings on npmjs.com"
+          exit 1
