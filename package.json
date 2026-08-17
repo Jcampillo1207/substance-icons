@@ -13,17 +13,17 @@
     "dev": "turbo dev",
     "generate-icons": "turbo generate-icons"
   },
-  "devEngines": {
-    "packageManager": {
-      "name": "npm",
-      "version": ">=10",
-      "onFail": "warn"
-    }
-  },
   "engines": {
     "node": ">=18"
   },
   "devDependencies": {
     "turbo": "^2.5.8"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "^10",
+      "onFail": "warn"
+    }
   }
 }
