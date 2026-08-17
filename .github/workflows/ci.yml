@@ -1,0 +1,98 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: verify (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Covers the floor declared in engines.node through current.
+        node: [18, 20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build, typecheck and test
+        run: npx turbo build typecheck test
+
+  icons-in-sync:
+    # The components under src/icons are generated from svg/. Editing one by hand looks
+    # like it works until the next generator run silently reverts it. Generator output is
+    # sorted and deterministic, so any diff here is real drift.
+    name: icons in sync with svg/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run generate-icons
+
+      - name: Fail if generated components drifted
+        run: |
+          if ! git diff --quiet -- packages/icons/src; then
+            echo "::error::packages/icons/src is out of sync with svg/. Run 'npm run generate-icons' and commit the result."
+            git diff --stat -- packages/icons/src
+            exit 1
+          fi
+          echo "Generated components match svg/."
+
+  pack:
+    # Publishing is the only thing that exercises `files`, prepack and the tarball shape.
+    # This catches an empty or over-stuffed package before a tag does.
+    name: pack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build the tarball
+        run: npm pack
+        working-directory: packages/icons
+
+      - name: Assert the tarball ships dist and nothing else
+        working-directory: packages/icons
+        run: |
+          tarball=$(ls ./*.tgz)
+          echo "Contents of $tarball:"
+          tar -tzf "$tarball"
+          if ! tar -tzf "$tarball" | grep -q '^package/dist/index.cjs.js$'; then
+            echo "::error::dist/index.cjs.js is missing from the tarball"
+            exit 1
+          fi
+          if tar -tzf "$tarball" | grep -qE '^package/(src|svg|scripts|test|node_modules)/'; then
+            echo "::error::the tarball leaks source directories"
+            exit 1
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package-tarball
+          path: packages/icons/*.tgz

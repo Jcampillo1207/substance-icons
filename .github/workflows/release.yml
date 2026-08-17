@@ -1,0 +1,49 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  # Required for npm provenance: npm exchanges this OIDC token for an attestation
+  # that ties the published tarball to this workflow run and commit. This is why
+  # publishing from CI is worth the setup — it cannot be produced from a laptop.
+  id-token: write
+
+jobs:
+  publish:
+    name: publish to npm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - run: npm ci
+
+      - name: Build, typecheck and test
+        run: npx turbo build typecheck test
+
+      - name: Assert the tag matches the package version
+        working-directory: packages/icons
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version=$(node -p "require('./package.json').version")
+          if [ "$tag" != "$version" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match package version $version"
+            exit 1
+          fi
+          echo "Publishing $version"
+
+      # prepack re-runs typecheck, build and test here. The duplication is deliberate:
+      # it is the last gate before an immutable artifact reaches the registry.
+      - name: Publish
+        run: npm publish --provenance --access public
+        working-directory: packages/icons
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

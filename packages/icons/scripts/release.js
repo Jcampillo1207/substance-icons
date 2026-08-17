@@ -43,23 +43,35 @@ const gitStatus = () => {
   return status;
 };
 
-/** Paths the release is allowed to commit. Never `git add -A`: it stages whatever else */
-/** happens to be lying around, including untracked .env files and editor droppings. */
-const RELEASE_PATHS = ["src", "svg", "package.json", "package-lock.json"];
+/**
+ * Paths the release is allowed to commit. Never `git add -A`: it stages whatever else
+ * happens to be lying around, including untracked .env files and editor droppings.
+ * `:/` anchors a pathspec to the repository root — the lockfile lives there in the
+ * workspace, while this script runs from packages/icons.
+ */
+const RELEASE_PATHS = ["src", "svg", "package.json", ":/package-lock.json"];
 
 const isTracked = (p) => execSilent(`git ls-files --error-unmatch ${p}`) !== null;
 
 /**
- * @param {{ push: boolean }} options - whether to push the commit and tag when done.
+ * Two mutually exclusive release paths, so a tag never triggers a second publish of a
+ * version that was already pushed to the registry by hand:
+ *
+ *   mode "local" (ship)   — publish from this machine, do not push. No provenance.
+ *   mode "ci"    (deploy) — bump and push the tag; .github/workflows/release.yml
+ *                           publishes with provenance via OIDC.
+ *
+ * @param {{ mode: "local" | "ci" }} options
  */
-const release = async ({ push }) => {
+const release = async ({ mode }) => {
+  const push = mode === "ci";
   console.log(`${push ? "🚀 Starting deployment" : "🚢 Starting ship"} process...\n`);
 
   try {
     // Reinstall from the lockfile so the published artifact is built against a known tree.
     // Skipped while node_modules is committed: `npm ci` wipes and reinstalls it, which
     // would leave thousands of spurious modifications in the working tree.
-    if (isTracked("node_modules")) {
+    if (isTracked(":/node_modules")) {
       console.log(
         "⚠️  node_modules is tracked by git — skipping `npm ci`.\n" +
           "   Run `git rm -r --cached node_modules` once, then this step turns on.\n"
@@ -108,14 +120,10 @@ const release = async ({ push }) => {
     const newVersion = getVersion();
     console.log(`✅ New version: ${newVersion}\n`);
 
-    console.log("📤 Publishing to npm...");
-    try {
-      // --access and provenance come from publishConfig in package.json.
-      exec("npm publish");
-    } catch (error) {
-      console.error(`\n❌ Publish failed — rolling back v${newVersion}`);
-      // `npm version` makes exactly one commit whose message is the bare version string.
-      // Verify that before resetting, so a surprise HEAD is never discarded.
+    // `npm version` makes exactly one commit whose message is the bare version string.
+    // Verifying that before any reset means a surprise HEAD is never discarded.
+    const rollback = (reason) => {
+      console.error(`\n❌ ${reason} — rolling back v${newVersion}`);
       const head = execSilent("git log -1 --pretty=%s");
       if (head === newVersion) {
         exec(`git tag -d v${newVersion}`);
@@ -127,23 +135,38 @@ const release = async ({ push }) => {
             `   Undo manually: git tag -d v${newVersion} && git reset --hard HEAD~1`
         );
       }
-      throw error;
-    }
-    console.log("");
+    };
 
     if (push) {
-      // Push before declaring success: the npm version is already immutable, so a commit
-      // and tag that only exist on this laptop is the worst state to end in.
       console.log("🔼 Pushing to GitHub...");
-      exec("git push --follow-tags");
+      try {
+        exec("git push --follow-tags");
+      } catch (error) {
+        rollback("Push failed");
+        throw error;
+      }
       console.log("");
-      console.log("✅ Deployment completed successfully!");
-      console.log(`🎉 Version ${newVersion} published and pushed to GitHub`);
+      console.log("✅ Tag pushed.");
+      console.log(
+        `🎉 v${newVersion} is now building in CI; Release publishes it to npm with provenance.`
+      );
+      console.log("   https://github.com/Jcampillo1207/substance-icons/actions");
     } else {
+      console.log("📤 Publishing to npm from this machine...");
+      try {
+        // --access comes from publishConfig. No provenance: that needs CI with OIDC,
+        // which is what `npm run deploy` goes through.
+        exec("npm publish");
+      } catch (error) {
+        rollback("Publish failed");
+        throw error;
+      }
+      console.log("");
       console.log("✅ Ship completed successfully!");
-      console.log(`🎉 Version ${newVersion} published to npm\n`);
-      console.log("⚠️  Don't forget to push to GitHub:");
-      console.log("   git push --follow-tags");
+      console.log(`🎉 Version ${newVersion} published to npm, without provenance.\n`);
+      console.log("⚠️  Not pushed. The tag would trigger a second publish and fail, so:");
+      console.log("   git push && git push origin :refs/tags/v" + newVersion + " || true");
+      console.log("   (or prefer `npm run deploy`, which publishes through CI)");
     }
   } catch (error) {
     // With stdio "inherit" the real output already went to the terminal; error.message is

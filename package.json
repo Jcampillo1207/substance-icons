@@ -1,75 +1,28 @@
 {
-  "name": "@intello/substance-icons",
-  "version": "1.0.195",
-  "description": "Substance Icons is a lightweight React icon library that provides a collection of customizable and scalable SVG icons for modern web applications.",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
-  "sideEffects": false,
-  "scripts": {
-    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
-    "build": "npm run clean && npm run build:types && rollup -c rollup.config.mjs",
-    "build:types": "tsc --emitDeclarationOnly",
-    "typecheck": "tsc --noEmit",
-    "test": "node --test test/*.test.js",
-    "generate-icons": "node scripts/generateIcons.js",
-    "dev": "npm run generate-icons && npm run build",
-    "ship": "node scripts/ship.js",
-    "deploy": "node scripts/deploy.js",
-    "prepack": "npm run typecheck && npm run build && npm test"
-  },
-  "keywords": [
-    "react",
-    "icons",
-    "svg",
-    "components",
-    "library",
-    "substance-icons",
-    "intello",
-    "typescript",
-    "scalable",
-    "customizable",
-    "react-icons",
-    "lightweight",
-    "tree-shakeable"
+  "name": "substance-icons",
+  "private": true,
+  "description": "Monorepo for the Substance Icons library and its documentation site.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
   ],
-  "author": "José Campillo",
-  "license": "ISC",
-  "homepage": "https://intelloai.com/resources/substance/icons",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jcampillo1207/substance-icons.git"
+  "scripts": {
+    "build": "turbo build",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "dev": "turbo dev",
+    "generate-icons": "turbo generate-icons"
   },
-  "bugs": {
-    "url": "https://github.com/Jcampillo1207/substance-icons/issues"
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "11.8.0"
+    }
   },
   "engines": {
     "node": ">=18"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "react": ">=16.8.0"
-  },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^12.3.0",
-    "@svgr/core": "^8.1.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "fs-extra": "^11.2.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "rollup": "^4.18.0",
-    "svgo": "^3.3.2",
-    "tslib": "^2.8.1",
-    "typescript": "^5.5.3"
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ]
+    "turbo": "^2.5.8"
+  }
 }

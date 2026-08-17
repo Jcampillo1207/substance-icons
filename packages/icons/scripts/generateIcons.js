@@ -9,6 +9,12 @@ const indexFile = path.join(__dirname, "../src/index.ts");
 const typesFile = path.join(__dirname, "../src/icons/types.ts");
 
 /**
+ * Code-point comparator. localeCompare would order differently depending on the
+ * machine's ICU build and locale, which is exactly what must not vary here.
+ */
+const byName = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+
+/**
  * Convert SVG content to base64
  */
 const svgToBase64 = (svgContent) => {
@@ -217,7 +223,8 @@ const generateUniversalIconComponent = async () => {
   const files = await fs.readdir(iconsDir);
   const iconNames = files
     .filter((file) => file.endsWith(".tsx") && file !== "Substance.tsx")
-    .map((file) => path.basename(file, ".tsx"));
+    .map((file) => path.basename(file, ".tsx"))
+    .sort(byName);
 
   const iconImports = iconNames
     .map((iconName) => `import ${iconName} from './${iconName}';`)
@@ -295,7 +302,8 @@ const generateIndexFile = async () => {
   const files = await fs.readdir(iconsDir);
   const iconNames = files
     .filter((file) => file.endsWith(".tsx"))
-    .map((file) => path.basename(file, ".tsx"));
+    .map((file) => path.basename(file, ".tsx"))
+    .sort(byName);
 
   const exports = iconNames
     .map(
@@ -336,7 +344,13 @@ const toPascalCase = (str) => {
  * @returns {Promise<Map<string, string>>} iconName -> source file path
  */
 const collectIcons = async (dir, out = new Map()) => {
-  for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
+  // readdir order is filesystem-dependent, so sorting is what makes the generated
+  // index.ts, types.ts and Substance.tsx byte-identical across machines and CI.
+  const entries = (await fs.readdir(dir, { withFileTypes: true })).sort((a, b) =>
+    byName(a.name, b.name)
+  );
+
+  for (const entry of entries) {
     const filePath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
