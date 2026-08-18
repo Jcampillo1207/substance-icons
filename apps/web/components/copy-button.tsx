@@ -38,7 +38,10 @@ export const CopyButton = ({
     <Button
       variant={variant}
       size={size}
-      className={cn("gap-1.5", className)}
+      // The label swap changes the button's width, which reflows the code beside it.
+      // Reserving the wider label's width keeps the row still.
+      className={cn("gap-1.5 justify-start", className)}
+      style={{ minWidth: `${copiedLabel.length + 5}ch` }}
       aria-label={`${label}: ${value}`}
       onClick={async () => {
         try {

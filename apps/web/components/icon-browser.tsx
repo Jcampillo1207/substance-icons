@@ -62,14 +62,14 @@ export const IconBrowser = () => {
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search 140 icons…"
             aria-label="Search icons"
-            className="h-8 pl-8 text-xs"
+            className="h-8 pl-8 text-base md:text-xs"
           />
           {query ? (
             <button
               type="button"
               onClick={() => setQuery("")}
               aria-label="Clear search"
-              className="text-muted-foreground hover:text-foreground absolute top-1/2 right-2 -translate-y-1/2 duration-300 ease-in-out"
+              className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 focus-visible:border-ring absolute top-1/2 right-1 grid size-6 -translate-y-1/2 place-items-center transition-colors duration-300 ease-in-out focus-visible:ring-1 focus-visible:outline-none"
             >
               <X className="size-3.5" />
             </button>
@@ -115,10 +115,10 @@ export const IconBrowser = () => {
               )}
             >
               <Component
-                style={{ width: size, height: size }}
-                className="text-muted-foreground group-hover:text-foreground duration-300 ease-in-out"
+                size={size}
+                className="text-muted-foreground group-hover:text-foreground transition-colors duration-300 ease-in-out"
               />
-              <span className="text-muted-foreground group-hover:text-foreground max-w-full truncate px-2 text-[10px] duration-300 ease-in-out">
+              <span className="text-muted-foreground group-hover:text-foreground max-w-full truncate px-2 text-[10px] transition-colors duration-300 ease-in-out">
                 {name}
               </span>
             </button>
