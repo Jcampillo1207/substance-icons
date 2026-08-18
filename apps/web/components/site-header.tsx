@@ -10,7 +10,7 @@ export const SiteHeader = ({ version }: { version: string }) => (
     <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-3 py-3 md:px-5">
       <div className="flex items-baseline gap-x-3">
         <Link href="/" className="flex items-center gap-x-2 text-sm font-medium">
-          <SubstanceMark className="size-4" />
+          <SubstanceMark className="h-5 w-auto" />
           Substance Icons
         </Link>
         <span className="text-muted-foreground text-xs tabular-nums">
