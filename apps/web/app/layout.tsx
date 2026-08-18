@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 })
 
-const siteUrl = "https://substance.jmcr.beer"
+const siteUrl = "https://www.substance.jmcr.beer"
 const title = "Substance Icons"
 const description =
   "140 customizable, scalable SVG icons for React. Tree-shakeable, typed, and dependency-free."
