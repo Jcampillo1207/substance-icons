@@ -10,7 +10,7 @@ export interface ChevronLeftDashedProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name ChevronLeftDashed
  * @description Automatically generated SVG icon component for ChevronLeftDashed.
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0IDQiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTE1IDctNSA1IDUgNSIvPjwvc3ZnPg==)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0IDIiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTE1IDctNSA1IDUgNSIvPjwvc3ZnPg==)
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
@@ -37,7 +37,7 @@ const ChevronLeftDashed = /*#__PURE__*/ Object.assign(
     style={style}
     fill="none" viewBox="0 0 24 24"
     {...props}
-  ><path stroke={color || "currentColor"} strokeDasharray="4 4" strokeLinecap="square" strokeWidth="2" d="m15 7-5 5 5 5"/></svg>
+  ><path stroke={color || "currentColor"} strokeDasharray="4 2" strokeWidth="2" d="m15 7-5 5 5 5"/></svg>
   )),
   // displayName goes inside a pure expression, not a separate assignment statement.
   // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a

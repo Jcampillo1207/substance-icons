@@ -10,7 +10,7 @@ export interface SearchDashedProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name SearchDashed
  * @description Automatically generated SVG icon component for SearchDashed.
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0IDQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTIxIDIxLTQuMzQtNC4zNE0xOSAxMWE4IDggMCAxIDEtMTYgMCA4IDggMCAwIDEgMTYgMFoiLz48L3N2Zz4=)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2UtZGFzaGFycmF5PSI0IDIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTIxIDIxLTQuMzQtNC4zNE0xOSAxMWE4IDggMCAxIDEtMTYgMCA4IDggMCAwIDEgMTYgMFoiLz48L3N2Zz4=)
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
@@ -37,7 +37,7 @@ const SearchDashed = /*#__PURE__*/ Object.assign(
     style={style}
     fill="none" viewBox="0 0 24 24"
     {...props}
-  ><path stroke={color || "currentColor"} strokeDasharray="4 4" strokeLinejoin="round" strokeWidth="2" d="m21 21-4.34-4.34M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+  ><path stroke={color || "currentColor"} strokeDasharray="4 2" strokeLinejoin="round" strokeWidth="2" d="m21 21-4.34-4.34M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
   )),
   // displayName goes inside a pure expression, not a separate assignment statement.
   // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
