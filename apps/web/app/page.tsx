@@ -16,7 +16,7 @@ const { version } = require("@intello/substance-icons/package.json") as {
 export default function Home() {
   return (
     <div className="flex min-h-dvh flex-col">
-      <SiteHeader version={version} />
+      <SiteHeader />
 
       <main className="mx-auto w-full max-w-5xl flex-1 px-3 md:px-5">
         <section className="flex w-full flex-col gap-y-4 py-10 lg:max-w-xl">
@@ -36,7 +36,7 @@ export default function Home() {
         </section>
       </main>
 
-      <SiteFooter />
+      <SiteFooter version={version} />
     </div>
   )
 }

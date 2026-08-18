@@ -1,4 +1,4 @@
-export const SiteFooter = () => (
+export const SiteFooter = ({ version }: { version: string }) => (
   <footer className="w-full border-t">
     <div className="text-muted-foreground mx-auto flex w-full max-w-5xl flex-col gap-y-1 px-3 py-8 text-xs md:flex-row md:items-center md:justify-between md:gap-y-0 md:px-5">
       <p>
@@ -11,7 +11,9 @@ export const SiteFooter = () => (
         </a>
         .
       </p>
-      <p>ISC licensed. Free for anything.</p>
+      <p className="tabular-nums">
+        v{version} &middot; ISC licensed. Free for anything.
+      </p>
     </div>
   </footer>
 )
