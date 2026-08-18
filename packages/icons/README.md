@@ -104,6 +104,12 @@ type ButtonProps = {
 }
 ```
 
+Each icon also exports its own props type, named after it.
+
+```tsx
+import type { CheckProps } from "@intello/substance-icons"
+```
+
 ## Rendering an icon by name
 
 `Substance` resolves a name at runtime.

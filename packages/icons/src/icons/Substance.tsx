@@ -141,7 +141,7 @@ import X from './X';
 import XDashed from './XDashed';
 import type { IconName } from './types';
 
-export interface IconProps extends React.SVGProps<SVGSVGElement> {
+export interface SubstanceProps extends React.SVGProps<SVGSVGElement> {
   name: IconName;
   size?: number | string;
   color?: string;
@@ -164,7 +164,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
  */
 
 const Substance = /*#__PURE__*/ Object.assign(
-  /*#__PURE__*/ React.forwardRef<SVGSVGElement, IconProps>(({
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, SubstanceProps>(({
   name,
   size = 24,
   color = "currentColor",

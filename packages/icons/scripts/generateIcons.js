@@ -42,6 +42,11 @@ const generateIconComponent = async (filePath, iconName) => {
           },
         },
       },
+      // cleanupIds (inside preset-default) minifies every id down to "a", so any two
+      // icons with a clipPath or gradient end up defining id="a" on the same page and
+      // url(#a) resolves against whichever rendered first. Namespacing by icon name
+      // makes each definition unique. Runs after preset-default, on the minified ids.
+      { name: "prefixIds", params: { prefix: iconName, delim: "_", prefixClassNames: false } },
       "removeXMLNS",
     ],
   });
@@ -234,7 +239,7 @@ const generateUniversalIconComponent = async () => {
 ${iconImports}
 import type { IconName } from './types';
 
-export interface IconProps extends React.SVGProps<SVGSVGElement> {
+export interface SubstanceProps extends React.SVGProps<SVGSVGElement> {
   name: IconName;
   size?: number | string;
   color?: string;
@@ -257,7 +262,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
  */
 
 const Substance = /*#__PURE__*/ Object.assign(
-  /*#__PURE__*/ React.forwardRef<SVGSVGElement, IconProps>(({
+  /*#__PURE__*/ React.forwardRef<SVGSVGElement, SubstanceProps>(({
   name,
   size = 24,
   color = "currentColor",
@@ -308,7 +313,8 @@ const generateIndexFile = async () => {
   const exports = iconNames
     .map(
       (iconName) =>
-        `export { default as ${iconName} } from './icons/${iconName}';`
+        `export { default as ${iconName} } from './icons/${iconName}';\n` +
+        `export type { ${iconName}Props } from './icons/${iconName}';`
     )
     .join("\n");
 

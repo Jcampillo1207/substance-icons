@@ -10,7 +10,7 @@ export interface SendProps extends React.SVGProps<SVGSVGElement> {
  * @component
  * @name Send
  * @description Automatically generated SVG icon component for Send.
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTIxIDMgMTAuOTE0IDEzLjA4NW0wIDBMMTUuMDEzIDIyIDIxIDMgMiA4Ljk4N3oiLz48L2c+PGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDI0djI0SDB6Ii8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+)
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGcgY2xpcC1wYXRoPSJ1cmwoI1NlbmRfYSkiPjxwYXRoIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNMjEgMyAxMC45MTQgMTMuMDg1bTAgMEwxNS4wMTMgMjIgMjEgMyAyIDguOTg3eiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9IlNlbmRfYSI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgyNHYyNEgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==)
  * @param {object} props - SVG component props, including any valid SVG attribute.
  * @param {number|string} [props.size=24] - Icon size.
  * @param {string} [props.color] - Icon color (defaults to currentColor).
@@ -37,7 +37,7 @@ const Send = /*#__PURE__*/ Object.assign(
     style={style}
     fill="none" viewBox="0 0 24 24"
     {...props}
-  ><g clipPath="url(#a)"><path stroke={color || "currentColor"} strokeLinecap="square" strokeWidth="2" d="M21 3 10.914 13.085m0 0L15.013 22 21 3 2 8.987z"/></g><defs><clipPath id="a"><path fill={color || "currentColor"} d="M0 0h24v24H0z"/></clipPath></defs></svg>
+  ><g clipPath="url(#Send_a)"><path stroke={color || "currentColor"} strokeLinecap="square" strokeWidth="2" d="M21 3 10.914 13.085m0 0L15.013 22 21 3 2 8.987z"/></g><defs><clipPath id="Send_a"><path fill={color || "currentColor"} d="M0 0h24v24H0z"/></clipPath></defs></svg>
   )),
   // displayName goes inside a pure expression, not a separate assignment statement.
   // A top-level `X.displayName = "X"` is a side effect that no bundler may drop, and in a
