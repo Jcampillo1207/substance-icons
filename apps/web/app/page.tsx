@@ -1,28 +1,42 @@
-import { icons, iconCount } from "@/lib/icons"
+import { createRequire } from "node:module"
+
+import { iconCount } from "@/lib/icons"
+import { IconBrowser } from "@/components/icon-browser"
+import { InstallBlock } from "@/components/install-block"
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
+
+// Read at build time from the workspace package, so the header can never claim a
+// version that was not the one built.
+const require = createRequire(import.meta.url)
+const { version } = require("@intello/substance-icons/package.json") as {
+  version: string
+}
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 py-16">
-      <header className="flex flex-col gap-y-2 border-b pb-6">
-        <h1 className="text-2xl font-medium">Substance Icons</h1>
-        <p className="text-muted-foreground text-sm">
-          {iconCount} customizable, scalable SVG icons for React.
-        </p>
-      </header>
+    <div className="flex min-h-dvh flex-col">
+      <SiteHeader version={version} />
 
-      <div className="grid grid-cols-4 gap-px border-b md:grid-cols-6 lg:grid-cols-8">
-        {icons.map(({ name, Component }) => (
-          <div
-            key={name}
-            className="group hover:bg-accent flex aspect-square flex-col items-center justify-center gap-y-2 border-r border-b"
-          >
-            <Component size={20} />
-            <span className="text-muted-foreground group-hover:text-foreground max-w-full truncate px-2 text-[10px]">
-              {name}
-            </span>
-          </div>
-        ))}
-      </div>
-    </main>
+      <main className="mx-auto w-full max-w-5xl flex-1 px-3 md:px-5">
+        <section className="flex w-full flex-col gap-y-4 py-10 lg:max-w-xl">
+          <h1 className="text-base font-semibold lg:text-lg">
+            {iconCount} icons for React, and nothing else.
+          </h1>
+          <p className="text-muted-foreground text-sm tracking-normal">
+            Every icon is a typed component that forwards refs and props, ships no
+            runtime dependencies, and tree-shakes down to the ones you import.
+            Drawn on a 24×24 grid with a 2px square-capped stroke.
+          </p>
+          <InstallBlock />
+        </section>
+
+        <section className="flex w-full flex-col pb-16">
+          <IconBrowser />
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
   )
 }
