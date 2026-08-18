@@ -130,3 +130,18 @@
     @apply font-mono;
     }
 }
+
+/* The only intentional divergence from the portfolio's globals.css. Its motion is
+   sparse enough that the guard changes nothing there, but this site animates 140 grid
+   cells on hover and a dialog on every icon, so honouring the OS setting matters.
+   Worth porting back so the two files stay diffable. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -3,6 +3,7 @@ import { ExternalLink } from "@intello/substance-icons"
 
 import { Button } from "@/components/ui/button"
 import { SubstanceMark } from "@/components/substance-mark"
+import { hitArea } from "@/lib/hit-area"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export const SiteHeader = ({ version }: { version: string }) => (
@@ -18,8 +19,8 @@ export const SiteHeader = ({ version }: { version: string }) => (
         </span>
       </div>
 
-      <div className="flex items-center gap-x-0.5">
-        <Button variant="ghost" size="sm" asChild>
+      <div className="flex items-center gap-x-3">
+        <Button variant="ghost" size="sm" className={hitArea} asChild>
           <a
             href="https://github.com/Jcampillo1207/substance-icons"
             target="_blank"

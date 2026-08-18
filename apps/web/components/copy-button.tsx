@@ -5,6 +5,7 @@ import { Check, Copy } from "@intello/substance-icons"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { hitArea } from "@/lib/hit-area"
 
 /**
  * Swaps its own label for ~1.2s instead of raising a toast. The portfolio has no toast,
@@ -40,7 +41,7 @@ export const CopyButton = ({
       size={size}
       // The label swap changes the button's width, which reflows the code beside it.
       // Reserving the wider label's width keeps the row still.
-      className={cn("gap-1.5 justify-start", className)}
+      className={cn("gap-1.5 justify-start", hitArea, className)}
       style={{ minWidth: `${copiedLabel.length + 5}ch` }}
       aria-label={`${label}: ${value}`}
       onClick={async () => {

@@ -7,6 +7,7 @@ import { Bun, Npm, Pnpm, Yarn } from "@/components/brand-icons"
 import { CopyButton } from "@/components/copy-button"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { hitArea } from "@/lib/hit-area"
 
 const MANAGERS: { name: PackageManager; Logo: typeof Npm }[] = [
   { name: "npm", Logo: Npm },
@@ -29,6 +30,7 @@ export const InstallBlock = () => {
             size="xs"
             onClick={() => setManager(name)}
             aria-pressed={name === manager}
+            className={hitArea}
           >
             {/* Unselected logos sit at reduced opacity rather than greyscale: the colour
                 is what identifies them, so draining it costs more than it buys. */}

@@ -5,6 +5,7 @@ import { Search, X } from "@intello/substance-icons"
 
 import { icons, type IconEntry } from "@/lib/icons"
 import { cn } from "@/lib/utils"
+import { hitAreaWide } from "@/lib/hit-area"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { IconDetail } from "@/components/icon-detail"
@@ -80,7 +81,7 @@ export const IconBrowser = () => {
           <span className="text-muted-foreground text-xs tabular-nums">
             {results.length} of {icons.length}
           </span>
-          <div className="flex items-center gap-x-0.5">
+          <div className="flex items-center gap-x-2">
             {SIZES.map((value) => (
               <Button
                 key={value}
@@ -88,7 +89,7 @@ export const IconBrowser = () => {
                 size="xs"
                 onClick={() => setSize(value)}
                 aria-pressed={value === size}
-                className="tabular-nums"
+                className={cn("tabular-nums", hitAreaWide)}
               >
                 {value}
               </Button>

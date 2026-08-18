@@ -5,6 +5,7 @@ import { useTheme } from "next-themes"
 import { Moon, Sun } from "@intello/substance-icons"
 
 import { Button } from "@/components/ui/button"
+import { hitAreaIcon } from "@/lib/hit-area"
 
 /**
  * Mirrors the "d" hotkey the ThemeProvider already binds, for people who use a mouse.
@@ -22,6 +23,7 @@ export const ThemeToggle = () => {
       variant="ghost"
       size="icon-sm"
       aria-label="Toggle theme"
+      className={hitAreaIcon}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {mounted && resolvedTheme === "dark" ? <Sun /> : <Moon />}
