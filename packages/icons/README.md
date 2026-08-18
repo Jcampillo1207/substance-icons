@@ -1,186 +1,139 @@
+<img src="https://www.substance.jmcr.beer/icon.svg" alt="Substance" width="64" height="64" />
+
 # Substance Icons
 
-A lightweight and elegant React icon library that converts your SVG files into optimized, customizable React components with TypeScript support.
+140 icons for React, and nothing else. Every icon is a typed component that forwards
+refs and props, ships no runtime dependencies, and tree shakes down to the ones you
+import. Drawn on a 24x24 grid with a 2px square capped stroke.
 
-## Features
+[Browse the set](https://www.substance.jmcr.beer) &middot;
+[npm](https://www.npmjs.com/package/@intello/substance-icons)
 
-- 🎨 **Simple**: Drop SVG files and generate React components automatically
-- 📦 **Optimized**: Built-in SVG optimization with SVGO and code minification
-- 🔷 **TypeScript**: Full TypeScript support with auto-generated types
-- ⚡ **Lightweight**: Tree-shakable exports for minimal bundle size
-- 🎯 **Customizable**: Size, color, and className props for easy styling
-- 🔧 **Developer Friendly**: Simple API and great DX
-- 🚀 **Fast Deploy**: Single command to build, version, publish and push
-
-## Installation
-
-Install the library using npm or yarn:
+## Install
 
 ```bash
-# Using npm
-npm install @intello/substance-icons@latest
-
-# Using yarn
-yarn add @intello/substance-icons@latest
-
-# Using pnpm
-pnpm add @intello/substance-icons@latest
+npm install @intello/substance-icons
 ```
+
+```bash
+pnpm add @intello/substance-icons
+```
+
+```bash
+yarn add @intello/substance-icons
+```
+
+```bash
+bun add @intello/substance-icons
+```
+
+React 16.8 or newer. No other runtime dependency.
 
 ## Usage
 
-### Import Individual Icons
-
-Import and use icons directly from the library:
-
-```jsx
-import React from "react";
-import { User, Heart, Settings } from "@intello/substance-icons";
-
-const App = () => (
-  <div>
-    <User size={32} color="blue" />
-    <Heart size={32} color="red" />
-    <Settings size={32} className="custom-class" />
-  </div>
-);
-
-export default App;
-```
-
-### Universal Icon Component
-
-Use the `Substance` component to dynamically render any icon by name:
-
-```jsx
-import React from "react";
-import { Substance } from "@intello/substance-icons";
-
-const App = () => {
-  const iconName = "User"; // Can be dynamic
-
-  return (
-    <div>
-      <Substance name="User" size={32} color="blue" />
-      <Substance name={iconName} size={48} className="icon" />
-    </div>
-  );
-};
-
-export default App;
-```
-
-### TypeScript Support
-
-Full TypeScript support with auto-generated types for all icons:
+Import each icon by name. Your bundler drops the 139 you did not ask for.
 
 ```tsx
-import React from "react";
-import { Substance, IconName } from "@intello/substance-icons";
+import { ArrowRight, Check, Search } from "@intello/substance-icons"
 
-const icons: IconName[] = ["User", "Heart", "Settings"];
-
-const App = () => (
+export const Toolbar = () => (
   <div>
-    {icons.map((icon) => (
-      <Substance
-        key={icon}
-        name={icon}
-        size={32}
-        color="currentColor"
-      />
-    ))}
+    <Search />
+    <Check />
+    <ArrowRight />
   </div>
-);
-
-export default App;
+)
 ```
 
 ## Props
 
-All icon components accept the following props:
+Every icon is a `forwardRef` component over `<svg>`, so anything valid on an SVG
+element works, including `onClick`, `id`, `role`, `aria-*`, `data-*`, `style` and
+`ref`.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `number` | `24` | Width and height of the icon in pixels |
-| `color` | `string` | `currentColor` | Icon color (inherits from CSS if not specified) |
-| `className` | `string` | `""` | Additional CSS classes |
-| `...props` | `SVGProps` | - | Any valid SVG attributes (onClick, style, etc.) |
+| Prop | Type | Default | Notes |
+| --- | --- | --- | --- |
+| `size` | `number \| string` | `24` | Sets `width` and `height`. Accepts CSS units, for example `"1em"`. |
+| `color` | `string` | `currentColor` | Sets the stroke. Prefer a text colour class, see below. |
+| `className` | `string` | | Applied to the root `<svg>`. |
+| `...props` | `SVGProps<SVGSVGElement>` | | Spread last, so your value wins over the default. |
 
-## Adding Your Own Icons
+### Colour
 
-If you're forking this library to create your own icon set:
+Icons stroke with `currentColor`, so they inherit the text colour of their container.
+That is the path you want: it survives theme switches and hover states for free.
 
-1. Place your SVG files in the `svg/` directory
-2. Run `npm run generate-icons` to convert them to React components
-3. Run `npm run build` to build the library
-4. Your icons are ready to use!
-
-```bash
-# Add your SVGs
-cp my-icon.svg svg/
-
-# Generate React components
-npm run generate-icons
-
-# Build the library
-npm run build
+```tsx
+<button className="text-neutral-500 hover:text-neutral-900">
+  <Check />
+</button>
 ```
 
-## Development
+The `color` prop is there for the cases CSS cannot reach, such as inlining into an
+email. Passing it pins the stroke to that value and opts the icon out of inheriting,
+which is usually not what you want.
 
-```bash
-# Install dependencies
-npm install
+### Size
 
-# Generate icons from SVG files
-npm run generate-icons
+`size` writes `width` and `height` attributes. A CSS class beats an attribute, so a
+utility like `size-5` overrides it and keeps the icon in step with your spacing scale.
 
-# Build the library
-npm run build
-
-# Development workflow (generate + build)
-npm run dev
-
-# Deploy with one command (generate + build + version + publish + git push)
-npm run deploy
+```tsx
+<ArrowRight size={16} />
+<ArrowRight className="size-4" />
 ```
 
-## Quick Deploy
+### Refs
 
-The `deploy` script allows you to build, update, and push your changes with a single command:
+```tsx
+const ref = useRef<SVGSVGElement>(null)
 
-```bash
-npm run deploy
+<Check ref={ref} />
 ```
 
-This will:
-1. Generate all icons from SVG files
-2. Build the library with optimizations
-3. Bump the patch version
-4. Publish to npm
-5. Push changes to GitHub
+## TypeScript
 
-## Contributing to Your Fork
+Types ship with the package. `IconName` is a union of all 140 names, useful for props
+that take an icon by name.
 
-1. Add your SVG files to the `svg/` directory
-2. Run `npm run generate-icons` to generate components
-3. Test your changes
-4. Build and publish your version
+```tsx
+import type { IconName } from "@intello/substance-icons"
 
-## Issues and Suggestions
+type ButtonProps = {
+  icon: IconName
+}
+```
 
-If you encounter any issues or have suggestions for improvements, please:
-- Open an issue on [GitHub](https://github.com/Jcampillo1207/substance-icons)
-- Reach out on Twitter: [@Chema12071](https://x.com/Chema12071)
+## Rendering an icon by name
+
+`Substance` resolves a name at runtime.
+
+```tsx
+import { Substance } from "@intello/substance-icons"
+
+<Substance name="Check" />
+```
+
+It imports all 140 icons to do so, which pins the whole library into your bundle,
+roughly 73 KB against roughly 1.2 KB for a single named import. Reach for it only when
+the name genuinely is not known until runtime, for example when it comes from a CMS.
+If you can name the icon while writing the code, import it directly.
+
+## Browser support
+
+Anything that runs React 16.8. The output targets ES5 and the components are plain
+SVG, so there is nothing to polyfill.
+
+## Contributing
+
+Icons live in [the monorepo](https://github.com/Jcampillo1207/substance-icons). The
+components under `src/icons` are generated from the SVG files in `svg/`, so edit the
+SVG and regenerate rather than editing a component by hand.
+
+Bugs and requests: [open an issue](https://github.com/Jcampillo1207/substance-icons/issues).
 
 ## License
 
-This project is licensed under the ISC License. See the [LICENSE](./LICENSE) file for more details.
+ISC. See [LICENSE](./LICENSE).
 
----
-
-**Author**: José Campillo
-**Website**: [intello.dev](https://intelloai.com/resources/substance/icons)
-**Twitter**: [@Chema12071](https://x.com/Chema12071)
-**GitHub**: [Jcampillo1207](https://github.com/Jcampillo1207)
+Built by [José Campillo](https://jmcr.beer).
